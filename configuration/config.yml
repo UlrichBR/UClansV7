@@ -39,9 +39,7 @@ Config:
       enchantment: enchantment.minecraft.{object}
       gameMode: gameMode.{object}
    
-  regions:
-    # This option will check regions for installed extensions such as WorldGuard, Ultra Regions etc...
-    enabled: true
+  regions: ''
   map:
     # This option will check regions for installed extensions such as Dynmap, BlueMap etc...
     enabled: true
