@@ -1,0 +1,29 @@
+# PREFERENCES: 
+# - Preferences preferably use the top of the list, if there is no implementation of the item, it searches for the next one, if none of the items in the list exist, it searches for the first one added.
+Modules:
+   
+  holograms:
+    # Extensions with HOLOGRAM category
+    preference:
+    - DECENTHOLOGRAMS
+    - HOLOGRAMS
+    - HOLOGRAPHICDISPLAYS
+    - CMI
+   
+  regions:
+    # Extensions with REGION category
+    preference:
+    - WORLDGUARD
+    - ULTRAREGIONS
+   
+  money:
+    # Extensions with MONEY category.
+    preference:
+    - VAULT
+    - TOKENENCHANT
+   
+  map:
+    # Extensions with MAP category.
+    preference:
+    - DYNMAP
+    - BLUEMAP
