@@ -70,30 +70,30 @@ LANGUAGE:
   clan reward level: '%tag% <yellow>Du hast Belohnungen verdient, weil dein Clan Level %num% erreicht hat'
   clan max members: <red>Dieser Clan hat bereits die maximale Anzahl an Spielern.
   clan max members level: '%tag% <red>Dieser Clan hat bereits die maximale Spielerzahl für das aktuelle Level.'
-  clan player kicked out: '%tag% <green>Du wurdest aus dem Clan geworfen <aqua>%clan% <red>von <green>%clan_leader%'
-  clan player kicked outby: '%tag% <dark_red>%player% <yellow>wurde aus dem Clan geworfen von <green>%clan_leader%'
+  clan player kicked out: '%tag% <green>Du wurdest aus dem Clan geworfen <aqua>%uclans_tag_nocolor%'
+  clan player kicked outby: '%tag% <dark_red>{player_other} <yellow>wurde aus dem Clan geworfen von <green>%uclans_player_name%'
   clan tag equals: '%tag% <red>Unverändertes TAG, scheint dasselbe zu sein.'
   clan name equals: '%tag% <red>Unveränderter NAME, scheint derselbe zu sein.'
   clan already rival: '%tag% <red>Dieser Clan ist bereits ein Rivale.'
   clan is ally: '%tag% <red>Dieser Clan ist bereits ein Verbündeter.'
   clan rival error remove: '%tag% <red>Fehler beim Entfernen des Rivalen.'
   clan dont rival: '%tag% <red>Dieser Clan ist kein Rivale.'
-  clan new ally: '%tag% <red>! <yellow>Mit dem Clan wurde ein neues Bündnis geschlossen <green>%clan_tag%'
-  clan removed ally: '%tag% <red>! <yellow>Die Allianz mit dem Clan <green>%clan_tag% <yellow>wurde entfernt.'
+  clan new ally: '%tag% <red>! <yellow>Mit dem Clan wurde ein neues Bündnis geschlossen <green>%uclans_tag_nocolor%'
+  clan removed ally: '%tag% <red>! <yellow>Die Allianz mit dem Clan <green>%uclans_tag_nocolor% <yellow>wurde entfernt.'
   clan one removed ally: '%tag% <red>! <yellow>Eine Allianz wurde entfernt.'
   clan one removed rival: '%tag% <red>! <yellow>Eine Rivalität wurde entfernt.'
-  clan created: '%tag% <red>! <yellow>Ein neuer Clan <aqua>%clan_tag% <yellow>wurde erstellt von <green>%player%.'
-  clan deleted: '%tag% <red>! <yellow>Der Clan <aqua>%clan_tag% <yellow>wurde gelöscht von <green>%player%.'
+  clan created: '%tag% <red>! <yellow>Ein neuer Clan <aqua>%uclans_tag_color% <yellow>wurde erstellt von <green>%uclans_leader_formated%.'
+  clan deleted: '%tag% <red>! <yellow>Der Clan <aqua>{deleted_clan} <yellow>wurde gelöscht.'
   clan deleted small: <red><strikethrough>Gelöscht
   clan ff changed: '%tag% <red>! <yellow>Der Teambeschuss ist <aqua>%value%.'
   clan globalff changed: '%tag% <red>! <yellow>Globaler Teambeschuss ist <aqua>%value%.'
-  clan new join: '%tag% <red>! <yellow>Der Spieler <green>%player% <yellow>trat in den Clan ein.'
-  clan new kick: '%tag% <red>! <yellow>Der Spieler <green>%player% <yellow>wurde aus dem Clan ausgeschlossen.'
-  clan new leave: '%tag% <red>! <red>Der Spieler <green>%player% <yellow>verließ den <green>%clan_tag% <red>Clan.'
-  clan new rival: '%tag% <red>! <yellow>Neue Rivalität mit dem Clan <green>%clan_tag%'
-  clan new rival removed: '%tag% <red>! <yellow>Die Rivalität mit dem Clan <green>%clan_tag% <yellow>wurde aufgelöst.'
-  clan new leader: '%tag% <red>! <yellow>Neue Clan-Leitung des Clans <green>%clan_tag% <yellow>ist <green>%player%'
-  clan rival removed: '%tag% <red>! <yellow>Die Rivalität mit dem Clan <green>%clan_tag% <yellow>wurde rückgängig gemacht.'
+  clan new join: '%tag% <red>! <yellow>Der Spieler <green>{player_other} <yellow>trat in den Clan ein.'
+  clan new kick: '%tag% <red>! <yellow>Der Spieler <green>{player_other} <yellow>wurde aus dem Clan ausgeschlossen.'
+  clan new leave: '%tag% <red>! <red>Der Spieler <green>{player_other} <yellow>verließ.'
+  clan new rival: '%tag% <red>! <yellow>Neue Rivalität mit dem Clan <green>%uclans_tag_nocolor%'
+  clan new rival removed: '%tag% <red>! <yellow>Die Rivalität mit dem Clan <green>%uclans_tag_nocolor% <yellow>wurde aufgelöst.'
+  clan new leader: '%tag% <red>! <yellow>Neue Clan-Leitung des Clans <green>%uclans_tag_nocolor% <yellow>ist <green>%player%'
+  clan rival removed: '%tag% <red>! <yellow>Die Rivalität mit dem Clan <green>%uclans_tag_nocolor% <yellow>wurde rückgängig gemacht.'
   clan verify changed: '%tag% <red>! <yellow>Der Clan wurde geändert zu <green>%value%.'
   clan new promote: '%tag% <red>! <yellow>Der Spieler <green>%player% <yellow>wurde befördert zu <aqua>%role_formated%.'
   clan new demote: '%tag% <red>! <red>Der Spieler <green>%player% <yellow>wurde degradiert.'
@@ -1897,15 +1897,15 @@ CHAT:
     message:
     - ' '
     - <red><strikethrough>-<gray><strikethrough>---------------------------------------------<red><strikethrough>-
-    - <red>! <yellow>Einladung zum Clanbeitritt erhalten <white>%clan_tag_nocolor%
-    - <click:run_command:"/{_clan} {_join} %clan_tag_nocolor%"><hover:show_text:"<green>Klicken Sie zum Akzeptieren, oder verwenden Sie <aqua>/{_clan} {_join} %clan_tag_nocolor%."><green>[ACCEPT]</green></hover></click>    <click:run_command:"/{_clan} {_deny} %clan_tag_nocolor%"><hover:show_text:"<green>Klicken Sie zum Verweigern oder verwenden Sie <aqua>/{_clan} {_deny} %clan_tag_nocolor%."><red>[DENY]</red></hover></click>    <click:run_command:"/{_clan} {_profile} {_invites}"><hover:show_text:"<green>Klicken Sie, um alle anzuzeigen, oder verwenden Sie <aqua>/{_clan} {_profile} {_invites} ."><yellow>[VIEW ALL]</yellow></hover></click>
+    - <red>! <yellow>Einladung zum Clanbeitritt erhalten <white>%uclans_tag_nocolor%
+    - <click:run_command:"/{_clan} {_join} %uclans_tag_nocolor%"><hover:show_text:"<green>Klicken Sie zum Akzeptieren, oder verwenden Sie <aqua>/{_clan} {_join} %uclans_tag_nocolor%."><green>[ACCEPT]</green></hover></click>    <click:run_command:"/{_clan} {_deny} %uclans_tag_nocolor%"><hover:show_text:"<green>Klicken Sie zum Verweigern oder verwenden Sie <aqua>/{_clan} {_deny} %uclans_tag_nocolor%."><red>[DENY]</red></hover></click>    <click:run_command:"/{_clan} {_profile} {_invites}"><hover:show_text:"<green>Klicken Sie, um alle anzuzeigen, oder verwenden Sie <aqua>/{_clan} {_profile} {_invites} ."><yellow>[VIEW ALL]</yellow></hover></click>
     - <red><strikethrough>-<gray><strikethrough>---------------------------------------------<red><strikethrough>-
     - ' '
-    actionbar: <red><bold>!</bold> <yellow>Einladung zum Clan-Beitritt erhalten <white>%clan_tag_nocolor%
+    actionbar: <red><bold>!</bold> <yellow>Einladung zum Clan-Beitritt erhalten <white>%uclans_tag_nocolor%
     title:
       line: <red>! <yellow>Neue Einladung
-      subline: <yellow>Clan <white>%clan_tag_nocolor%
-    bossbar: <red><bold>!</bold> <yellow>Einladung zum Clan-Beitritt erhalten <white>%clan_tag_nocolor% <red>({time})
+      subline: <yellow>Clan <white>%uclans_tag_nocolor%
+    bossbar: <red><bold>!</bold> <yellow>Einladung zum Clan-Beitritt erhalten <white>%uclans_tag_nocolor% <red>({time})
   clanregroupreceive:
     message:
     - ' '
@@ -1939,7 +1939,7 @@ CHAT:
     - <red><strikethrough>-<gray><strikethrough>---------------------------------------------<red><strikethrough>-
     - <red>! <yellow>Der <white>%clan_tag% <yellow>Clan hat ein Friedensgesuch eingereicht.
     - <red>! <yellow>Läuft ab in <aqua>%sec_expires% sec<gray>.
-    - <click:run_command:"/{_clan} {_rival} {_accept} %clan_tag_nocolor%"><hover:show_text:"<green>Klicken Sie zum Akzeptieren, oder verwenden Sie <aqua>/{_clan} {_rival} {_accept} %clan_tag_nocolor%."><green>[ACCEPT]</green></hover></click>      <click:run_command:"/{_clan} {_rival} {_deny} %clan_tag_nocolor%"><hover:show_text:"<green>Klicken Sie zum Verweigern oder verwenden Sie <aqua>/{_clan} {_rival} {_deny} %clan_tag_nocolor%"><red>[DENY]</red></hover></click>
+    - <click:run_command:"/{_clan} {_rival} {_accept} %uclans_tag_nocolor%"><hover:show_text:"<green>Klicken Sie zum Akzeptieren, oder verwenden Sie <aqua>/{_clan} {_rival} {_accept} %uclans_tag_nocolor%."><green>[ACCEPT]</green></hover></click>      <click:run_command:"/{_clan} {_rival} {_deny} %uclans_tag_nocolor%"><hover:show_text:"<green>Klicken Sie zum Verweigern oder verwenden Sie <aqua>/{_clan} {_rival} {_deny} %uclans_tag_nocolor%"><red>[DENY]</red></hover></click>
     - <red><strikethrough>-<gray><strikethrough>---------------------------------------------<red><strikethrough>-
     - ' '
     actionbar: <red><bold>!</bold> <yellow>>Friedensantrag erhalten!
@@ -1953,7 +1953,7 @@ CHAT:
     - <red><strikethrough>-<gray><strikethrough>---------------------------------------------<red><strikethrough>-
     - <red>! <yellow>Allianzanfrage vom Clan erhalten <white>%clan_tag%
     - <red>! <yellow>Läuft ab in <aqua>%sec_expires% sec<gray>.
-    - <click:run_command:"/{_clan} {_ally} {_accept} %clan_tag_nocolor%"><hover:show_text:"<green>Klicken Sie zum Akzeptieren, oder verwenden Sie <aqua>/{_clan} {_ally} {_accept} %clan_tag_nocolor%"><green>[ACCEPT]</green></hover></click>      <click:run_command:"/{_clan} {_ally} {_deny} %clan_tag_nocolor%"><hover:show_text:"<green>Klicken Sie zum Verweigern oder verwenden Sie <aqua>/{_clan} {_ally} {_deny} %clan_tag_nocolor%"><red>[DENY]</red></hover></click>
+    - <click:run_command:"/{_clan} {_ally} {_accept} %uclans_tag_nocolor%"><hover:show_text:"<green>Klicken Sie zum Akzeptieren, oder verwenden Sie <aqua>/{_clan} {_ally} {_accept} %uclans_tag_nocolor%"><green>[ACCEPT]</green></hover></click>      <click:run_command:"/{_clan} {_ally} {_deny} %uclans_tag_nocolor%"><hover:show_text:"<green>Klicken Sie zum Verweigern oder verwenden Sie <aqua>/{_clan} {_ally} {_deny} %uclans_tag_nocolor%"><red>[DENY]</red></hover></click>
     - <red><strikethrough>-<gray><strikethrough>---------------------------------------------<red><strikethrough>-
     - ' '
     actionbar: <red><bold>!</bold> <yellow>>Allianz-Antrag erhalten
