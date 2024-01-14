@@ -86,7 +86,7 @@ LANGUAGE:
   clan deleted: '%tag% <red>! <yellow>El Clan <aqua>{deleted_clan} <yellow>fue eliminado.'
   clan deleted small: <red><strikethrough>Eliminado
   clan ff changed: '%tag% <red>! <yellow>El fuego amigo es <aqua>%value%.'
-  clan globalff changed: '%tag% <red>! <yellow>El fuego amigo global es <aqua>%value%.'
+  clan globalff changed: '%tag% <red>! <yellow>El fuego amigo global es <aqua>%uclans_global_ff_formated%.'
   clan new join: '%tag% <red>! <yellow>El jugador <green>{player_other} <yellow>entró en el Clan.'
   clan new kick: '%tag% <red>! <yellow>El jugador <green>{player_other} <yellow>fue expulsado del Clan.'
   clan new leave: '%tag% <red>! <red>El jugador <green>{player_other} <yellow>abandonó el <green>%uclans_tag_nocolor% <red>Clan.'
