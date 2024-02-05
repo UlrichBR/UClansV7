@@ -355,15 +355,132 @@ LANGUAGE:
   new point received: '%tag% <white>Ваш клан получил <yellow>%points% поинтов<white>, и теперь имеет <yellow>%totalpoints% поинтов (%reason%)'
   new point removed: '%tag% <white>Клан потерял <yellow>%points% поинов<white>, и теперь имеет <yellow>%totalpoints% поинтов (%reason%)'
   new point set: '%tag% <white>Вашему клано количество поинтов было изменено на <yellow>%totalpoints% поинтов (%reason%)'
-  export mysql deconfigured: '%tag% <red>An error occurred, mysql fields are misconfigured.'
-  clan settings allysharedchat: <aqua>Ally shared chat
-  clan settings allysharedhome: <aqua>Ally shared homes
-  clan actions expired: '%tag% <red>The time for action is over.'
-  player invitation player expired: '%tag% <red>Your player invite has expired and there has been no response.'
-  player invitation expired: '%tag% <red>Your invitation to join the Clan <white>%clan_tag% <red>has expired.'
-  clan regroup invite expired: '%tag% <red>The invitation to regroup has expired!'
-  clan rival remove expired: '%tag% <red>The invitation to peace has expired!'
-  clan ally invite expired: '%tag% <red>The invitation to alliance has expired!'
+  export mysql deconfigured: '%tag% <red>Произошла ошибка, поля MySQL настроены неправильно..'
+  clan settings allysharedchat: <aqua>Общий чат союзника
+  clan settings allysharedhome: <aqua>Общие дома союзников
+  clan actions expired: '%tag% <red>Время действий закончилось.'
+  player invitation player expired: '%tag% <red>Срок действия вашего приглашения игрока истек, и ответа не последовало..'
+  player invitation expired: '%tag% <red>Ваше приглашение вступить в Клан <white>%clan_tag% <red>истекло.'
+  clan regroup invite expired: '%tag% <red>Срок действия приглашения на перегруппировку истек.!'
+  clan rival remove expired: '%tag% <red>Приглашение к миру истекло!'
+  clan ally invite expired: '%tag% <red>Приглашение в альянс истекло!'
+  no permission gui: <red>Без разрешения.
+  clan is rival gui: <red>Клан уже соперник.
+  clan already ally gui: <red>Клан уже союзник.
+  clan editor changed settings: '%tag% <green>Изменены настройки клана..'
+  clan editor changed settings gui: <green>Настройки были изменены.
+  clan tag changed: '%tag% <green>Тег клана изменен на %uclans_tag_color%'
+  clan disband success: '%tag% <red>Клан успешно расформирован.!'
+  clan disband error: '%tag% <red>Произошла ошибка при роспуске клана.'
+  clan disband error gui: <red>Ошибка при расформировании.
+  clan join error gui: <dark_red>Ошибка ввода.
+  clan join success gui: <green>Успешно вступил в клан.
+  banner acceptable list: ' <red>Допустимые типы: <aqua>%uclans_banner_upload_acceptable%'
+  mail new received: '%tag% <green>Ваш клан получил новое письмо.'
+  mail allie disabled: '%tag% <red>Клан союзников отключил эту опцию.'
+  mail readstate true: '*'
+  mail readstate false: '!'
+  mail readstate formated true: <green>*</green>
+  mail readstate formated false: <red>!</red>
+  help no new messages: ' <red>- Новых сообщений нет.'
+  help clan requires passwd: '%tag% <red>Для использования этого дома требуется пароль.'
+  help clan requires passwd gui: <red>Требуется пароль
+  help clan wrong passwd: '%tag% <red>Кажется, пароль неправильный...'
+  help clan wrong passwd gui: <red>Неправильный пароль.
+  help clan webhook header: '<newline>%uclans_tag_color%<blue><bold> вебхук:'
+  help clan webhook format:
+  - '<blue><bold>|</bold> <blue>Вебхук:'
+  - ' <white>Подключен: <aqua>%uclans_haswebhook_formated%'
+  - ' <white>Url: <aqua>%uclans_webhook_url%'
+  help clan webhook success add: '%tag% <green>Вебхук успешно добавлен.'
+  help clan webhook error add: '%tag% Произошла ошибка при добавлении вебхука. Проверьте URL.! (format: https://discord.com/api/webhooks/{channel}/{token})'
+  help clan webhook success remove: '%tag% <green>Вебхук успешно удален.'
+  help clan webhook success remove gui: <green>Успешно удалено
+  help clan webhook error remove: '%tag% <red>Не удалось удалить вебхук. Повторите попытку..'
+  help clan webhook error remove gui: <red>Ошибка удаления
+  help clan webhook cooldown: '%tag% <red>Вы недавно сделали запрос. Подождите еще %sec%, чтобы повторить попытку.'
+  help clan webhook linked: Игрок %player% связал клан %uclans_tag_nocolor% с помощью вебхука Discord, теперь здесь будут появляться уведомления и действия клана.
+  help logger header: <blue><bold>Клановый регистратор:</bold> <gray>%time% <gray>| <gray>(%page%/%pages%)
+  help logger format: '<hover:show_text:''<green>%uclans_logger:{id}:text%''><gray>- <white>Происхождение: <aqua>%uclans_logger:{id}:plugin%<gray> | <white>Дата: <aqua>%uclans_logger:{id}:date% <dark_gray>(Expires: %uclans_logger:{id}:expires%)<newline>  <aqua>%uclans_logger:{id}:text%</hover>'
+  help logger clear success gui: <green>Журнал успешно очищен.
+  help logger clear error gui: <red>Ошибка очистки журнала
+  help mail header: <blue><bold>Клановая почта:</bold> <gray>%time% <gray>| <gray>(%page%/%pages%)
+  help mail format: '%uclans_mail:{id}:readstate_formated% <hover:show_text:''<green>%uclans_mail:{id}:text%''><gray>- <white>Происхождение: <aqua>%uclans_mail:{id}:from%<gray> | <white>Дата: <aqua>%uclans_mail:{id}:date% <dark_gray>(Expires: %uclans_mail:{id}:expires%)<newline>  <aqua>%uclans_mail:{id}:text%</hover>'
+  mail clear success gui: <green>Почта успешно очищена
+  mail clear error gui: <red>Ошибка очистки почты
+  mail max chars: '%tag% <red>Ваш текст кажется очень большим!'
+  mail max storage: '%tag% <red>Этот почтовый ящик клана переполнен.!'
+  mail max unread: '%tag% <red>У этого клана много непрочитанных сообщений!'
+  help clan extension not exist: '%tag% <red>Этого расширения нет в официальном списке, см. список в <aqua>/{_uclan} {_extension} {_all}'
+  help clan extension not enabled: '%tag% <red>Это расширение еще не скачано, все смотрите в <aqua>/{_uclan} {_extension} {_list}'
+  help clan extension already enabled: '%tag% <red>Это расширение уже загружено. Проверить наличие обновлений можно с помощью <aqua>/{_uclan} {_extension} {_update} <name>'
+  help clan extension header: '<newline><#cd2727><bold>Список загруженных расширений:'
+  help clan extension format: '<click:run_command:"/{_uclan} {_extension} {_view} {id}"><hover:show_text:''<green>Нажмите, чтобы просмотреть.''><green>{num} <gray>- <white>Имя: <aqua>{name} <gray>- <white>Состояние: <aqua>{state}</hover></click>'
+  help clan extension all header: '<newline><#cd2727><bold>All список расширений:'
+  help clan extension all format: '<click:run_command:"/{_uclan} {_extension} {_view} {id}"><hover:show_text:''<green>Нажмите, чтобы просмотреть.''><green>{num} <gray>- <white>Имя: <aqua>{name} <gray>- <white>Состояние: <aqua>{downloaded} <gray>({state})</hover></click>'
+  help clan extension view header: '<newline><#cd2727><bold>Extension information:'
+  help clan extension view format:
+  - '<newline><aqua><bold>|</bold> <aqua>Info:'
+  - ' <white>Имя: <aqua>{name}'
+  - ' <white>Статус: <aqua>{status}'
+  - ' <white>Автор: <aqua>{author}'
+  - ' <white>Версия: <aqua>{version}'
+  - ' <white>Описание: <aqua>{description}'
+  - ' <white>Категория: <aqua>{category}'
+  - ''
+  clan extension state true: <green>Включено
+  clan extension state false: <red>Неполноценный
+  clan extension downloaded true: <green>Скачано
+  clan extension downloaded false: <red>Не скачано
+  clan extension event already exists: '%tag% <red>Расширение уже загружалось ранее, можно попробовать обновить.'
+  clan extension event already updated: '%tag% <red>Расширение уже обновлено.'
+  clan extension event error download: '%tag% <red>Не могу скачать расширение, попробуйте еще раз.'
+  clan extension event error repo: '%tag% <red>Произошла ошибка, похоже репозиторий не найден.'
+  clan extension event general error: '%tag% <red>При загрузке расширения произошла ошибка. Повторите попытку..'
+  clan extension event need reload addons: '%tag% <red>Расширение необходимо обновить, обновите с помощью <red>/{_uclan} {_extension} {_reload}'
+  clan extension event success download: '%tag% <green>Расширение успешно загружено, обновите расширения с помощью <red>/{_uclan} {_extension} {_reload}'
+  clan extension download started: '%tag% <green>Процесс загрузки начался, подождите....'
+  clan extension download started gui: <green>Загрузка началась, подождите....
+  clan extension all: <red>Все
+  clan extension instaled: <green>Установлено
+  help player logger prev: <click:run_command:"/{_clan} {_logger} {_view} %time% %page%"><hover:show_text:'<green>Нажмите, чтобы вернуться назад.'><aqua><< Previous</hover></click>
+  help player logger next: <click:run_command:"/{_clan} {_logger} {_view} %time% %page%"><hover:show_text:'<green>Нажмите, чтобы перейти дальше.'><aqua>Next >></hover></click>
+  help player logger separer: <gray>|
+  help player mail prev: <click:run_command:"/{_clan} {_mail} {_read} %time% %page%"><hover:show_text:'<green>Нажмите, чтобы вернуться назад.'><aqua><< Previous</hover></click>
+  help player mail next: <click:run_command:"/{_clan} {_mail} {_read} %time% %page%"><hover:show_text:'<green>Нажмите, чтобы перейти дальше.'><aqua>Next >></hover></click>
+  help player mail separer: <gray>|
+  translaction daily: Ежедневно
+  translaction weekly: Еженедельно
+  translaction monthly: Ежемесячно
+  translaction yearly: Ежегодно
+  translaction none: Не один
+  translaction read: Читать
+  translaction unread: Не прочитано
+  clan dont permission role gui: <red>Текущая роль не может этого сделать.
+  clan rival remove already invited gui: <red>Уже есть запрос!
+  clan rival remove error gui: <red>Ошибка при отправке!
+  clan rival remove moderation offline gui: <red>Нет онлайн-модерации.
+  clan rival remove sended gui: <green>Мир отправлен, пожалуйста, подождите.
+  clan rival remove success: '%tag% <green>Соперничество между кланами было прекращено..'
+  clan rival remove success gui: <green>Конкурент успешно удален.
+  clan rival add error: '%tag% <red>Произошла ошибка при добавлении нового соперника.!'
+  clan rival add error gui: <red>Ошибка добавления!
+  clan rival add success: '%tag% <green>Вы добавили этот клан в качестве нового соперника.'
+  clan rival add success gui: <green>Добавлен новый соперник.
+  clan ally invite already invited gui: <red>Существующее приглашение.
+  clan ally invite error gui: <red>Ошибка при отправке!
+  clan ally invite moderation offline gui: <red>Нет онлайн-модераторов.
+  clan ally invite sended gui: <green>Приглашение отправлено, подождите.
+  clan ally remove success: '%tag% <green>Союз между кланами расторгнут..'
+  clan ally remove success gui: <green>Альянс успешно удален.
+  clan ally remove error: '%tag% <red>Произошла ошибка при отправке запроса!'
+  clan ally remove error gui: <red>Ошибка при отправке!
+  clan ally add error: '%tag% <red>Произошла ошибка при добавлении нового союзника.!'
+  clan ally add error gui: <red>Ошибка добавления!
+  clan ally add success: '%tag% <green>Вы добавили этот клан в качестве нового союзника.'
+  clan ally add success gui: <green>Добавлен новый союзник.
+  clan feature not unlocked: '%tag% <red>В вашем клане эта функция недоступна, для этого требуется уровень <aqua>%uclans_required_level:{type}%'
+  clan feature not unlocked gui: <red>Требуется уровень <aqua>%uclans_required_level:{type}%
  
 # TRANSLATIONS OF GUI MENU FILES
  
@@ -380,7 +497,7 @@ GUI:
   General disband_confirm items cancel lore:
   - ''
   - ' <yellow>Нажми, чтобы отменить.'
-  General changeleader_confirm title: <aqua>Cconfirm changing Клан Leader?
+  General changeleader_confirm title: <aqua>подтвердить изменение Клан Лидер?
   General changeleader_confirm items fill name: ' '
   General changeleader_confirm items fill lore: [
     ]
@@ -1287,24 +1404,337 @@ GUI:
   General banner_upload items confirm lore:
   - ''
   - ' <yellow>Нажми, для сохранения.'
-  General clan_actions items allysharedhome name: <green>Allied shared Home
+  General clan_actions items allysharedhome name: <green>Общий дом союзников
   General clan_actions items allysharedhome lore:
   - ' '
-  - ' <white>State: %uclans_actions_state:ALLYSHAREDHOME%'
+  - ' <white>Состояние: %uclans_actions_state:ALLYSHAREDHOME%'
   - ''
-  - ' <yellow>Click to toggle '
+  - ' <yellow>Нажмите, чтобы переключиться '
   - ' '
-  - ' <red>When disabled, your clan''s homes will'
-  - <red>not appear in the allied home list.
-  General clan_actions items allysharedchat name: <green>Allied shared chat
+  - <red>При отключении дома вашего клана, будут
+  - <red>не отображается в списке союзных домов.
+  General clan_actions items allysharedchat name: <green>Общий чат союзников
   General clan_actions items allysharedchat lore:
   - ' '
-  - ' <white>State: %uclans_actions_state:ALLYSHAREDCHAT%'
+  - ' <white>Состояние: %uclans_actions_state:ALLYSHAREDCHAT%'
   - ''
-  - ' <yellow>Click to toggle '
+  - ' <yellow>Нажмите, чтобы переключиться '
   - ' '
-  - ' <red>When disabled, your clan does not'
-  - <red>receive or send messages from allies.
+  - ' <red>При отключении ваш клан не будет'
+  - <red>получать или отправлять сообщения от союзников.
+  General clan_home items logger name: <green>Клановый регистратор
+  General clan_home items logger lore:
+  - ' <yellow>Клановые события'
+  - ' <gray>'
+  - ' <gray>Количество: <green>%uclans_logger_amount%'
+  - ' '
+  - ' <yellow>Нажмите, чтобы открыть.'
+  General clan_home items mail name: <green>Почтовый ящик клана
+  General clan_home items mail lore:
+  - ' <yellow>Письмо получено'
+  - ' <gray>'
+  - ' <gray>Общий: <green>%uclans_mail_amount%'
+  - ' <gray>Не прочитано: <green>%uclans_mail_amount_unread%'
+  - ' '
+  - ' <yellow>Нажмите, чтобы открыть.'
+  General clan_stats items join name: <green>Вступай в клан!
+  General clan_stats items join lore:
+  - ' '
+  - ' <yellow>Нажмите, чтобы вступить в клан'
+  - ''
+  - <red>Если вы уже участвуете
+  - <red>клан, который вы автоматически покинете.
+  General clan_settings items webhook name: <green>Discord Webhook.
+  General clan_settings items webhook lore:
+  - ''
+  - ' <white>Подключен: <aqua>%uclans_haswebhook_formated%'
+  - ' <white>Url: <aqua>%uclans_webhook_urlshort%'
+  - ''
+  - ' <yellow>НАЖМИТЕ ЛЕВУЮ кнопку мыши, чтобы изменить.'
+  - ' <red>НАЖМИТЕ ПРАВУЮ ПРАВУЮ, чтобы сбросить настройки..'
+  General clan_actions items receivemailallies name: <green>Письмо от союзников
+  General clan_actions items receivemailallies lore:
+  - ' '
+  - ' <white>Состояние: %uclans_actions_state:RECEIVEMAILALLIES%'
+  - ''
+  - ' <yellow>Нажмите, чтобы переключиться '
+  - ' '
+  - ' <red>Когда отключено, ваш клан'
+  - <red>не будет получать почту от союзников.
+  General clan_top items only_open name: <green>Только открытые кланы?
+  General clan_top items only_open lore:
+  - ''
+  - ' <white>Состояние: <aqua>{state}'
+  - ' <yellow>Нажмите, чтобы применить фильтр.'
+  General rival items add name: <green>Найдите новых соперников.
+  General rival items add lore:
+  - ''
+  - ' <yellow>Нажмите, чтобы открыть.'
+  General ally items add name: <green>Найдите новых союзников
+  General ally items add lore:
+  - ''
+  - ' <yellow>Нажмите, чтобы открыть.'
+  General members items onlines name: <green>Онлайн игроки?
+  General members items onlines lore:
+  - ''
+  - ' <white>Состояние: <red>{state}'
+  - ' <yellow>Нажмите, чтобы отфильтровать.'
+  General banner_home_pre title: <blue>Выберите значок баннера
+  General banner_home_pre items back name: <red>Вернись
+  General banner_home_pre items back lore:
+  - ''
+  - ' <yellow>Нажмите, чтобы вернуться.'
+  General banner_home_pre items next name: <green>Следущая страница
+  General banner_home_pre items next lore:
+  - ''
+  - ' <yellow>Нажмите, чтобы продолжить.'
+  General banner_home_pre items previous name: <green>Предыдущая страница
+  General banner_home_pre items previous lore:
+  - ''
+  - ' <yellow>Нажмите, чтобы вернуться.'
+  General banner_home_pre items current name: <green>%name%.
+  General banner_home_pre items current lore:
+  - ''
+  - ' <yellow>Нажмите, чтобы выбрать.'
+  General banner_home_pre items fill name: ' '
+  General banner_home_pre items fill lore: [
+    ]
+  General banner_home_pre items fill2 name: ' '
+  General banner_home_pre items fill2 lore: [
+    ]
+  General banner_home_pre items fill3 name: ' '
+  General banner_home_pre items fill3 lore: [
+    ]
+  General banner_home_pre items common name: '<green>Фильтр: <aqua>Общий'
+  General banner_home_pre items common lore:
+  - ''
+  - ' <yellow>Нажмите, чтобы применить фильтр.'
+  General banner_home_pre items common_current name: '<green>Фильтр: <aqua>Общий'
+  General banner_home_pre items common_current lore:
+  - ''
+  - ' <green>Текущий фильтр'
+  General banner_home_pre items head name: '<green>Фильтр: <aqua>Головы'
+  General banner_home_pre items head lore:
+  - ''
+  - ' <yellow>Нажмите, чтобы применить фильтр.'
+  General banner_home_pre items head_current name: '<green>Фильтр: <aqua>Головы'
+  General banner_home_pre items head_current lore:
+  - ''
+  - ' <green>Текущий фильтр'
+  General banner_home_pre items banner name: '<green>Фильтр: <aqua>Баннеры'
+  General banner_home_pre items banner lore:
+  - ''
+  - ' <yellow>Нажмите, чтобы применить фильтр.'
+  General banner_home_pre items banner_current name: '<green>Фильтр: <aqua>Баннеры'
+  General banner_home_pre items banner_current lore:
+  - ''
+  - ' <green>Текущий фильтр'
+  General clan_logger title: <blue>Клановый регистратор <gray>| <green>{timer}
+  General clan_logger items fill name: ' '
+  General clan_logger items fill lore: [
+    ]
+  General clan_logger items fill2 name: ' '
+  General clan_logger items fill2 lore: [
+    ]
+  General clan_logger items current name: '<white>Происхождение:  <green>%uclans_logger:{id}:plugin%'
+  General clan_logger items current lore:
+  - ' '
+  - ' <white>Дата: <aqua>%uclans_logger:{id}:date% <dark_gray>(Expires: %uclans_logger:{id}:expires%)'
+  - ' '
+  - ' <gray>- <yellow>%uclans_logger:{id}:text%'
+  General clan_logger items clear name: <green>Очистить весь журнал
+  General clan_logger items clear lore:
+  - ''
+  - ' <yellow>Нажмите, чтобы очистить.'
+  - ''
+  - <red>! Это не может быть отменено
+  General clan_logger items next name: <green>Следущая страница
+  General clan_logger items next lore:
+  - ''
+  - ' <yellow>Нажмите, чтобы продолжить.'
+  General clan_logger items previous name: <green>Предыдущая страница
+  General clan_logger items previous lore:
+  - ''
+  - ' <yellow>Нажмите, чтобы вернуться.'
+  General clan_logger items back name: <red>Вернись
+  General clan_logger items back lore:
+  - ''
+  - ' <yellow>Нажмите, чтобы вернуться.'
+  General clan_logger items filter_all name: '<green>Фильтр: <aqua>All'
+  General clan_logger items filter_all lore:
+  - ''
+  - ' <yellow>Нажмите, чтобы применить фильтр.'
+  General clan_logger items filter_all_current name: '<green>Фильтр: <aqua>All'
+  General clan_logger items filter_all_current lore:
+  - ''
+  - ' <green>Текущий фильтр'
+  General clan_logger items filter_daily name: '<green>Фильтр: <aqua>Daily'
+  General clan_logger items filter_daily lore:
+  - ''
+  - ' <yellow>Нажмите, чтобы применить фильтр.'
+  General clan_logger items filter_daily_current name: '<green>Фильтр: <aqua>Daily'
+  General clan_logger items filter_daily_current lore:
+  - ''
+  - ' <green>Текущий фильтр'
+  General clan_logger items filter_weekly name: '<green>Фильтр: <aqua>Weekly'
+  General clan_logger items filter_weekly lore:
+  - ''
+  - ' <yellow>Нажмите, чтобы применить фильтр.'
+  General clan_logger items filter_weekly_current name: '<green>Фильтр: <aqua>Weekly'
+  General clan_logger items filter_weekly_current lore:
+  - ''
+  - ' <green>Текущий фильтр'
+  General clan_logger items filter_monthly name: '<green>Фильтр: <aqua>Monthly'
+  General clan_logger items filter_monthly lore:
+  - ''
+  - ' <yellow>Нажмите, чтобы применить фильтр.'
+  General clan_logger items filter_monthly_current name: '<green>Фильтр: <aqua>Monthly'
+  General clan_logger items filter_monthly_current lore:
+  - ''
+  - ' <green>Текущий фильтр'
+  General clan_logger items filter_yearly name: '<green>Фильтр: <aqua>Yearly'
+  General clan_logger items filter_yearly lore:
+  - ''
+  - ' <yellow>Нажмите, чтобы применить фильтр.'
+  General clan_logger items filter_yearly_current name: '<green>Фильтр: <aqua>Yearly'
+  General clan_logger items filter_yearly_current lore:
+  - ''
+  - ' <green>Текущий фильтр'
+  General clear_logger_confirm title: <red>Подтвердить очистку журнала клана?
+  General clear_logger_confirm items fill name: ' '
+  General clear_logger_confirm items fill lore: [
+    ]
+  General clear_logger_confirm items confirm name: <green>Подтверждать
+  General clear_logger_confirm items confirm lore:
+  - ''
+  - ' <red>Нажмите, чтобы подтвердить.'
+  General clear_logger_confirm items cancel name: <green>Отменить
+  General clear_logger_confirm items cancel lore:
+  - ''
+  - ' <yellow>Нажмите, чтобы отменить.'
+  General clan_mail title: <blue>Почтовый ящик клана <gray>| <green>{timer}
+  General clan_mail items fill name: ' '
+  General clan_mail items fill lore: [
+    ]
+  General clan_mail items fill2 name: ' '
+  General clan_mail items fill2 lore: [
+    ]
+  General clan_mail items current name: '<white>Происхождение:  <green>%uclans_mail:{id}:from%'
+  General clan_mail items current lore:
+  - ' '
+  - ' <white>Дата: <aqua>%uclans_mail:{id}:date% <dark_gray>(Expires: %uclans_mail:{id}:expires%)'
+  - ' '
+  - ' <gray>- <yellow>%uclans_mail:{id}:text%'
+  General clan_mail items clear name: <green>Очистить весь почтовый ящик
+  General clan_mail items clear lore:
+  - ''
+  - ' <yellow>Нажмите, чтобы очистить.'
+  - ''
+  - <red>! Это не может быть отменено
+  General clan_mail items next name: <green>Следущая страница
+  General clan_mail items next lore:
+  - ''
+  - ' <yellow>Нажмите, чтобы продолжить.'
+  General clan_mail items previous name: <green>Предыдущая страница
+  General clan_mail items previous lore:
+  - ''
+  - ' <yellow>Нажмите, чтобы вернуться.'
+  General clan_mail items back name: <red>Вернись
+  General clan_mail items back lore:
+  - ''
+  - ' <yellow>Нажмите, чтобы вернуться.'
+  General clan_mail items filter_all name: '<green>Фильтр: <aqua>All'
+  General clan_mail items filter_all lore:
+  - ''
+  - ' <yellow>Нажмите, чтобы применить фильтр.'
+  General clan_mail items filter_all_current name: '<green>Фильтр: <aqua>All'
+  General clan_mail items filter_all_current lore:
+  - ''
+  - ' <green>Текущий фильтр'
+  General clan_mail items filter_unread name: '<green>Фильтр: <aqua>Unread'
+  General clan_mail items filter_unread lore:
+  - ''
+  - ' <yellow>Нажмите, чтобы применить фильтр.'
+  General clan_mail items filter_unread_current name: '<green>Фильтр: <aqua>Unread'
+  General clan_mail items filter_unread_current lore:
+  - ''
+  - ' <green>Текущий фильтр'
+  General clan_mail items filter_read name: '<green>Фильтр: <aqua>Read'
+  General clan_mail items filter_read lore:
+  - ''
+  - ' <yellow>Нажмите, чтобы применить фильтр.'
+  General clan_mail items filter_read_current name: '<green>Фильтр: <aqua>Read'
+  General clan_mail items filter_read_current lore:
+  - ''
+  - ' <green>Текущий фильтр'
+  General clear_mail_confirm title: <red>Подтвердите очистку почтового ящика?
+  General clear_mail_confirm items fill name: ' '
+  General clear_mail_confirm items fill lore: [
+    ]
+  General clear_mail_confirm items confirm name: <green>Подтвердите
+  General clear_mail_confirm items confirm lore:
+  - ''
+  - ' <red>Нажмите для подтверждения.'
+  General clear_mail_confirm items cancel name: <green>Отменить
+  General clear_mail_confirm items cancel lore:
+  - ''
+  - ' <yellow>Нажмите, чтобы отменить.'
+  General clan_rival_search title: <blue>Поиск соперников.
+  General clan_rival_search items fill name: ' '
+  General clan_rival_search items fill lore: [
+    ]
+  General clan_rival_search items back name: <red>Вернись
+  General clan_rival_search items back lore:
+  - ''
+  - ' <yellow>Нажмите, чтобы вернуться.'
+  General clan_rival_search items next name: <green>Следущая страница
+  General clan_rival_search items next lore:
+  - ''
+  - ' <yellow>Нажмите, чтобы продолжить.'
+  General clan_rival_search items previous name: <green>Предыдущая страница
+  General clan_rival_search items previous lore:
+  - ''
+  - ' <yellow>Нажмите, чтобы вернуться.'
+  General clan_rival_search items current name: <green>Клан %uclans_tag_color%
+  General clan_rival_search items current lore:
+  - ''
+  - ' <yellow>Информация о клане'
+  - ' <gray>'
+  - ' <gray>Уровень: <green>%uclans_level%'
+  - ' <gray>'
+  - ' <gray>Тег: <aqua>%uclans_tag_color%'
+  - ' <gray>Лидер: <aqua>%uclans_leader%'
+  - ' <gray>Члены: <aqua>%uclans_count_members%'
+  - ''
+  - ' <red>Нажмите, чтобы добавить.'
+  General clan_ally_search title: <blue>Поиск союзов.
+  General clan_ally_search items fill name: ' '
+  General clan_ally_search items fill lore: [
+    ]
+  General clan_ally_search items back name: <red>Вернись
+  General clan_ally_search items back lore:
+  - ''
+  - ' <yellow>Нажмите, чтобы вернуться.'
+  General clan_ally_search items next name: <green>Следущая страница
+  General clan_ally_search items next lore:
+  - ''
+  - ' <yellow>Нажмите, чтобы продолжить.'
+  General clan_ally_search items previous name: <green>Предыдущая страница
+  General clan_ally_search items previous lore:
+  - ''
+  - ' <yellow>Нажмите, чтобы вернуться.'
+  General clan_ally_search items current name: <green>Клан %uclans_tag_color%
+  General clan_ally_search items current lore:
+  - ''
+  - ' <yellow>Информация о клане'
+  - ' <gray>'
+  - ' <gray>Уровень: <green>%uclans_level%'
+  - ' <gray>'
+  - ' <gray>Тег: <aqua>%uclans_tag_color%'
+  - ' <gray>Лидер: <aqua>%uclans_leader%'
+  - ' <gray>Члены: <aqua>%uclans_count_members%'
+  - ''
+  - ' <red>Нажмите, чтобы добавить.'
  
  
  # TRANSLATIONS OF THE COMMANDS
@@ -1314,7 +1744,7 @@ COMMANDS:
   clan help show on_success: '%tag% <green>Вы обращаетесь за помощью!'
   clan help show on_error: '%tag% <red>Ошибка..'
   clan help show on_usage: '%tag% <red>Используйте <aqua>/{_clan} {_help}'
-  clan create show on_help: <click:suggest_command:"/{_clan} {_create} "><hover:show_text:'<white>Create a new Clan.'> <aqua>/{_clan} {_create} <red><tag> <gray>-<yellow> Нажми, чтобы создать a new Clan.</hover></click>
+  clan create show on_help: <click:suggest_command:"/{_clan} {_create} "><hover:show_text:'<white>Создайте новый клан.'> <aqua>/{_clan} {_create} <red><tag> <gray>-<yellow> Нажми, чтобы создать a new Clan.</hover></click>
   clan create show on_success: '%tag% <green>Вы создали клан!'
   clan create show on_error: '%tag% <red>Ошибка..'
   clan create show on_usage: '%tag% <red>Используйте <aqua>/{_clan} {_create} <red><tag>'
@@ -1398,7 +1828,7 @@ COMMANDS:
   clan info show on_success: ''
   clan info show on_error: '%tag% <red>Ошибка..'
   clan info show on_usage: '%tag% <red>Используй <aqua>/{_clan} {_info} <yellow>(tag) <yellow>(-gui)'
-  clan profile show on_help: <click:run_command:"/{_clan} {_profile} "><hover:show_text:'<white>Click to expand.'> <aqua>/{_clan} {_profile} <gray>-<yellow> Увидеть команды участников.</hover></click> <hover:show_text:'<white>Подкоманды.'><green>[!]</hover>
+  clan profile show on_help: <click:run_command:"/{_clan} {_profile} "><hover:show_text:'<white>Нажмите, чтобы развернуть.'> <aqua>/{_clan} {_profile} <gray>-<yellow> Увидеть команды участников.</hover></click> <hover:show_text:'<white>Подкоманды.'><green>[!]</hover>
   clan profile show on_success: '%tag% <green>Успешно'
   clan profile show on_error: '%tag% <red>Ошибка..'
   clan profile show on_usage: '%tag% <red>Используй <aqua>/{_clan} {_profile}'
@@ -1410,7 +1840,7 @@ COMMANDS:
   clan profile subcommands set show on_success: '%tag% <green>Конфигурация профиля успешно изменена'
   clan profile subcommands set show on_error: '%tag% <red>Ошибка..'
   clan profile subcommands set show on_usage: '%tag% <red>Используй <aqua>/{_clan} {_profile} {_set} <red><key> <value>'
-  clan profile subcommands updateskin: <click:suggest_command:"/{_clan} {_profile} {_updateskin} "><hover:show_text:'<white>Click to Обновить скин'> <aqua>/{_clan} {_profile} {_updateskin} <gray>-<yellow> Обновить скин</hover></click>
+  clan profile subcommands updateskin: <click:suggest_command:"/{_clan} {_profile} {_updateskin} "><hover:show_text:'<white>Нажмите, чтобы Обновить скин'> <aqua>/{_clan} {_profile} {_updateskin} <gray>-<yellow> Обновить скин</hover></click>
   clan profile subcommands updateskin show on_success: '%tag% <green>Обновляем скин, пожалуйста подождите...'
   clan profile subcommands updateskin show on_error: '%tag% <red>Ошибка..'
   clan profile subcommands updateskin show on_usage: '%tag% <red>Используй <aqua>/{_clan} {_profile} {_updateskin}'
@@ -1418,7 +1848,7 @@ COMMANDS:
   clan profile subcommands invites show on_success: '%tag% <green>Успешно'
   clan profile subcommands invites show on_error: '%tag% <red>Ошибка..'
   clan profile subcommands invites show on_usage: '%tag% <red>Используй <aqua>/{_clan} {_profile} {_invites} <yellow>(-gui)'
-  clan rival show on_help: <click:run_command:"/{_clan} {_rival} "><hover:show_text:'<white>Нажмите, чтобы увидеть команды соперника.'> <aqua>/{_clan} {_rival} <gray>-<yellow> Clan rivalries.</hover></click> <hover:show_text:'<white>Подкоманды.'><green>[!]</hover>
+  clan rival show on_help: <click:run_command:"/{_clan} {_rival} "><hover:show_text:'<white>Нажмите, чтобы увидеть команды соперника.'> <aqua>/{_clan} {_rival} <gray>-<yellow> Клановое соперничество.</hover></click> <hover:show_text:'<white>Подкоманды.'><green>[!]</hover>
   clan rival show on_success: ''
   clan rival show on_error: '%tag% <red>Ошибка...'
   clan rival show on_usage: '%tag% <red>Используй <aqua>/{_clan} {_rival}.'
@@ -1426,7 +1856,7 @@ COMMANDS:
   clan rival subcommands add show on_success: ''
   clan rival subcommands add show on_error: '%tag% <red>Ошибка..'
   clan rival subcommands add show on_usage: '%tag% <red>Используй <aqua>/{_clan} {_rival} {_add} <red><tag>'
-  clan rival subcommands remove: <click:suggest_command:"/{_clan} {_rival} {_remove} "><hover:show_text:'<white>Click to remove a rival.'> <aqua>/{_clan} {_rival} {_remove} <red><tag> <gray>-<yellow> Удалить соперника.</hover></click>
+  clan rival subcommands remove: <click:suggest_command:"/{_clan} {_rival} {_remove} "><hover:show_text:'<white>Нажмите, чтобы удалить конкурента.'> <aqua>/{_clan} {_rival} {_remove} <red><tag> <gray>-<yellow> Удалить соперника.</hover></click>
   clan rival subcommands remove show on_success: ''
   clan rival subcommands remove show on_error: '%tag% <red>Ошибка..'
   clan rival subcommands remove show on_usage: '%tag% <red>Используй <aqua>/{_clan} {_rival} {_remove} <red><tag>'
@@ -1450,7 +1880,7 @@ COMMANDS:
   clan ally subcommands add show on_success: ''
   clan ally subcommands add show on_error: '%tag% <red>Ошибка..'
   clan ally subcommands add show on_usage: '%tag% <red>Используй <aqua>/{_clan} {_ally} {_add} <red><tag>'
-  clan ally subcommands remove: <click:suggest_command:"/{_clan} {_ally} {_remove} "><hover:show_text:'<white>Click to remove clan alliances.'> <aqua>/{_clan} {_ally} {_remove} <red><tag> <gray>-<yellow> Удалить союзника.</hover></click>
+  clan ally subcommands remove: <click:suggest_command:"/{_clan} {_ally} {_remove} "><hover:show_text:'<white>Нажмите, чтобы удалить клановые альянсы.'> <aqua>/{_clan} {_ally} {_remove} <red><tag> <gray>-<yellow> Удалить союзника.</hover></click>
   clan ally subcommands remove show on_success: ''
   clan ally subcommands remove show on_error: '%tag% <red>Ошибка..'
   clan ally subcommands remove show on_usage: '%tag% <red>Используй <aqua>/{_clan} {_ally} {_remove} <red><tag>'
@@ -1468,7 +1898,7 @@ COMMANDS:
   clan ally subcommands list show on_usage: '%tag% <red>Используй <aqua>/{_clan} {_ally} {_list} <yellow>(tag) <yellow>(-gui)'
   clan member show on_help: <click:run_command:"/{_clan} {_member} "><hover:show_text:'<white>Нажми, чтобы увидеть список команд участников.'> <aqua>/{_clan} {_member} <gray>-<yellow> Участник клана.</hover></click> <hover:show_text:'<white>Подкоманды.'><green>[!]</hover>
   clan member show on_success: '%tag% <green>Успешно to use member.'
-  clan member show on_error: '%tag% <red>Error to use member.'
+  clan member show on_error: '%tag% <red>Ошибка при использовании участника.'
   clan member show on_usage: '%tag% <red>Используй <gold>/{_clan} {_member}'
   clan member subcommands invite: <click:suggest_command:"/{_clan} {_member} {_invite} "><hover:show_text:'<white>Нажми, чтобы пригласить игрока.'> <aqua>/{_clan} {_member} {_invite} <red><player> <gray>-<yellow> Пригласить игрока.</hover></click>
   clan member subcommands invite show on_success: ''
@@ -1534,11 +1964,11 @@ COMMANDS:
   clan regroup subcommands deny show on_success: ''
   clan regroup subcommands deny show on_error: '%tag% <red>Ошибка..'
   clan regroup subcommands deny show on_usage: '%tag% <red>Используй <aqua>/{_clan} {_regroup} {_deny}'
-  clan ban show on_help: <click:suggest_command:"/{_clan} {_ban} "><hover:show_text:'<white>Click to ban a player.'> <aqua>/{_clan} {_ban} <red><player> <gray>-<yellow> Забанить игрока.</hover></click>
+  clan ban show on_help: <click:suggest_command:"/{_clan} {_ban} "><hover:show_text:'<white>Нажмите, чтобы заблокировать игрока.'> <aqua>/{_clan} {_ban} <red><player> <gray>-<yellow> Забанить игрока.</hover></click>
   clan ban show on_success: '%tag% <green>Игрок успешно забанен'
   clan ban show on_error: '%tag% <red>Ошибка..'
   clan ban show on_usage: '%tag% <red>Используй <aqua>/{_clan} {_ban} <red><nickname>'
-  clan unban show on_help: <click:suggest_command:"/{_clan} {_unban} "><hover:show_text:'<white>Click to unban a player.'> <aqua>/{_clan} {_unban} <red><player> <gray>-<yellow> Разбанить игрока.</hover></click>
+  clan unban show on_help: <click:suggest_command:"/{_clan} {_unban} "><hover:show_text:'<white>Нажмите, чтобы разбанить игрока.'> <aqua>/{_clan} {_unban} <red><player> <gray>-<yellow> Разбанить игрока.</hover></click>
   clan unban show on_success: '%tag% <green>Игрок успешно разбанен.'
   clan unban show on_error: '%tag% <red>Ошибка..'
   clan unban show on_usage: '%tag% <red>Используй <aqua>/{_clan} {_unban} <red><player>'
@@ -1626,6 +2056,110 @@ COMMANDS:
   uclan reload show on_success: '%tag% <green>Плагин перезагружен <yellow>(%time%).'
   uclan reload show on_error: '%tag% <red>Ошибка..'
   uclan reload show on_usage: '%tag% <red>Используй <yellow>/{_uclan} {_reload}'
+  clan logger show on_help: <click:run_command:"/{_clan} {_logger} "><hover:show_text:'<green>Нажмите, чтобы развернуть команды регистратора.'> <aqua>/{_clan} {_logger} <gray>-<yellow> Журнал клана.</hover></click> <hover:show_text:'<green>With sub commands.'><green>[!]</hover>
+  clan logger show on_success: '%tag% <green>Успех.'
+  clan logger show on_error: '%tag% <red>Ошибка.'
+  clan logger show on_usage: '%tag% <red>Использовать <aqua>/{_clan} {_logger}'
+  clan logger subcommands clear: <click:suggest_command:"/{_clan} {_logger} {_clear} "><hover:show_text:'<green>Нажмите, чтобы очистить журнал клана'> <aqua>/{_clan} {_logger} {_clear} <gray>-<yellow> Очистить журнал клана.</hover></click>
+  clan logger subcommands clear show on_success: '%tag% <green>Журнал клана успешно очищен..'
+  clan logger subcommands clear show on_error: '%tag% <red>Произошла ошибка при очистке журнала клана..'
+  clan logger subcommands clear show on_usage: '%tag% <red>Use <aqua>/{_clan} {_logger} {_clear}'
+  clan logger subcommands view: <click:suggest_command:"/{_clan} {_logger} {_view} "><hover:show_text:'<green>Нажмите, чтобы просмотреть журнал клана'> <aqua>/{_clan} {_logger} {_view} <light_purple>(time) <light_purple>(page) <light_purple>(-gui) <gray>-<yellow> Посмотреть журнал клана.</hover></click>
+  clan logger subcommands view show on_success: '%tag% <green>Успех'
+  clan logger subcommands view show on_error: '%tag% <red>Ошибка'
+  clan logger subcommands view show on_usage: '%tag% <red>Использовать <aqua>/{_clan} {_logger} {_view} <light_purple>(time) <light_purple>(page) <light_purple>(-gui)'
+  clan mail show on_help: <click:run_command:"/{_clan} {_mail} "><hover:show_text:'<green>Нажмите, чтобы развернуть почтовые команды.'> <aqua>/{_clan} {_mail} <gray>-<yellow> Клановая почта.</hover></click> <hover:show_text:'<green>With sub commands.'><green>[!]</hover>
+  clan mail show on_success: '%tag% <green>Успех.'
+  clan mail show on_error: '%tag% <red>Ошибка.'
+  clan mail show on_usage: '%tag% <red>Использовать <aqua>/{_clan} {_mail}'
+  clan mail subcommands clear: <click:suggest_command:"/{_clan} {_mail} {_clear} "><hover:show_text:'<green>Нажмите, чтобы очистить почту клана'> <aqua>/{_clan} {_mail} {_clear} <gray>-<yellow> Очистить почтовый ящик клана.</hover></click>
+  clan mail subcommands clear show on_success: '%tag% <green>Почтовый ящик клана успешно очищен..'
+  clan mail subcommands clear show on_error: '%tag% <red>Произошла ошибка при очистке почтового ящика клана..'
+  clan mail subcommands clear show on_usage: '%tag% <red>Использовать <aqua>/{_clan} {_mail} {_clear}'
+  clan mail subcommands read: <click:suggest_command:"/{_clan} {_mail} {_read} "><hover:show_text:'<green>Нажмите, чтобы прочитать почту клана'> <aqua>/{_clan} {_mail} {_read} <light_purple>(time) <light_purple>(page) <light_purple>(-gui) <gray>-<yellow> Посмотреть почту клана.</hover></click>
+  clan mail subcommands read show on_success: '%tag% <green>Успех'
+  clan mail subcommands read show on_error: '%tag% <red>Ошибка'
+  clan mail subcommands read show on_usage: '%tag% <red>Использовать <aqua>/{_clan} {_mail} {_read} <light_purple>(time) <light_purple>(page) <light_purple>(-gui)'
+  clan mail subcommands send: <click:suggest_command:"/{_clan} {_mail} {_send} "><hover:show_text:'<green>Нажмите, чтобы отправить письмо клану'> <aqua>/{_clan} {_mail} {_send} <red><to> <red><text> <gray>-<yellow> Отправить письмо.</hover></click>
+  clan mail subcommands send show on_success: '%tag% <green>Письмо успешно отправлено.'
+  clan mail subcommands send show on_error: '%tag% <red>Произошла ошибка при отправке письма.'
+  clan mail subcommands send show on_usage: '%tag% <red>Использовать <aqua>/{_clan} {_mail} {_send} <red><to> <red><text>'
+  clan discord show on_help: <click:run_command:"/{_clan} {_discord} "><hover:show_text:'<green>Нажмите, чтобы развернуть команды Discord.'> <aqua>/{_clan} {_discord} <gray>-<yellow> Клановый вебхук.</hover></click> <hover:show_text:'<green>С подкомандами.'><green>[!]</hover>
+  clan discord show on_success: '%tag% <green>Успех.'
+  clan discord show on_error: '%tag% <red>Ошибка.'
+  clan discord show on_usage: '%tag% <red>Использовать <aqua>/{_clan} {_discord}'
+  clan discord subcommands remove: <click:suggest_command:"/{_clan} {_discord} {_remove} "><hover:show_text:'<green>Нажмите, чтобы удалить вебхук'> <aqua>/{_clan} {_discord} {_remove} <gray>-<yellow> Невозможно определить язык. Выберите язык сами..</hover></click>
+  clan discord subcommands remove show on_success: '%tag% <green>Вебхук клана успешно удален.'
+  clan discord subcommands remove show on_error: '%tag% <red>Произошла ошибка при удалении вебхука, возможно, он не установлен..'
+  clan discord subcommands remove show on_usage: '%tag% <red>Использовать <aqua>/{_clan} {_discord} {_remove}'
+  clan discord subcommands view: <click:suggest_command:"/{_clan} {_discord} {_view} "><hover:show_text:'<green>Нажмите, чтобы просмотреть вебхук клана'> <aqua>/{_clan} {_discord} {_view} <light_purple>(-gui) <gray>-<yellow> Посмотреть вебхук клана.</hover></click>
+  clan discord subcommands view show on_success: '%tag% <green>Успех'
+  clan discord subcommands view show on_error: '%tag% <red>Ошибка'
+  clan discord subcommands view show on_usage: '%tag% <red>Использовать <aqua>/{_clan} {_discord} {_view} <light_purple>(-gui)'
+  clan discord subcommands createhook: <click:suggest_command:"/{_clan} {_discord} {_createhook} "><hover:show_text:'<green>Нажмите, чтобы создать вебхук клана'> <aqua>/{_clan} {_discord} {_createhook} <red><url> <gray>-<yellow> Создать вебхук клана.</hover></click>
+  clan discord subcommands createhook show on_success: '%tag% <green>Мы тестируем ваш вебхук. Подождите несколько секунд....'
+  clan discord subcommands createhook show on_error: '%tag% <red>Произошла ошибка при создании вебхука.'
+  clan discord subcommands createhook show on_usage: '%tag% <red>Использовать <aqua>/{_clan} {_discord} {_createhook} <red><url>'
+  uclan emptyclans show on_help: <click:suggest_command:"/{_uclan} {_emptyclans} "><hover:show_text:'<green>Нажмите, чтобы начать.'> <aqua>/{_uclan} {_emptyclans} <red><-arg:value> <gray>-<yellow> Очистить кланы сервера.</hover></click>
+  uclan emptyclans show on_success: '%tag% <green>Началась проверка данных игрока и клана, следуйте инструкциям ниже..'
+  uclan emptyclans show on_error: '%tag% <red>Произошла ошибка, возможно вы не правильно указали аргументы. <red>Keys: {keys}'
+  uclan emptyclans show on_usage: '%tag% <red>Использовать <aqua>/{_uclan} {_emptyclans} <red><-arg:value>'
+  uclan kick show on_help: <click:suggest_command:"/{_uclan} {_kick} "><hover:show_text:'<green>Нажмите, чтобы начать.'> <aqua>/{_uclan} {_kick} <red><TAG> <Player> <gray>-<yellow> Удалить игрока клана.</hover></click>
+  uclan kick show on_success: '%tag% <green>Игрок успешно удален.'
+  uclan kick show on_error: '%tag% <red>Произошла ошибка при удалении игрока из клана..'
+  uclan kick show on_usage: '%tag% <red>Использовать <aqua>/{_uclan} {_kick} <red><TAG> <Player>'
+  uclan setleader show on_help: <click:suggest_command:"/{_uclan} {_setleader} "><hover:show_text:'<green>Нажмите, чтобы начать.'> <aqua>/{_uclan} {_setleader} <red><TAG> <Player> <gray>-<yellow> Установить лидера клана.</hover></click>
+  uclan setleader show on_success: '%tag% <green>Новый лидер успешно сменился.'
+  uclan setleader show on_error: '%tag% <red>Произошла ошибка при назначении нового лидера клана..'
+  uclan setleader show on_usage: '%tag% <red>Использовать <aqua>/{_uclan} {_setleader} <red><TAG> <Player>'
+  uclan bank show on_help: <click:run_command:"/{_uclan} {_bank} "><hover:show_text:'<green>Нажмите, чтобы развернуть банковские команды.'> <aqua>/{_uclan} {_bank} <gray>-<yellow> Сменить банк клана.</hover></click> <hover:show_text:'<green>С подкомандами.'><green>[!]</hover>
+  uclan bank show on_success: '%tag% <green>успех'
+  uclan bank show on_error: '%tag% <red>Произошла ошибка при смене банка uclan..'
+  uclan bank show on_usage: '%tag% <red>Использовать <aqua>/{_uclan} {_bank}'
+  uclan bank subcommands view: <click:suggest_command:"/{_uclan} {_bank} {_view} "><hover:show_text:'<green>Нажмите, чтобы просмотреть банк.'> <aqua>/{_uclan} {_bank} {_view} <red><tag|player> <gray>-<yellow> Посмотреть банк клана.</hover></click>
+  uclan bank subcommands view show on_success: '%tag% <green>В этом клановом банке есть <green>{value}.'
+  uclan bank subcommands view show on_error: '%tag% <red>Ошибка при просмотре банка кланов.'
+  uclan bank subcommands view show on_usage: '%tag% <red>Использовать <aqua>/{_uclan} {_bank} {_view} <red><tag|player>'
+  uclan bank subcommands set: <click:suggest_command:"/{_uclan} {_bank} {_set} "><hover:show_text:'<green>Нажмите, чтобы установить банк.'> <aqua>/{_uclan} {_bank} {_set} <gray>-<yellow> Установить банк клана.</hover></click>
+  uclan bank subcommands set show on_success: '%tag% <green>Клановый банк настроен на <green>{value}'
+  uclan bank subcommands set show on_error: '%tag% <red>Произошла ошибка при смене банка.'
+  uclan bank subcommands set show on_usage: '%tag% <red>Использовать <aqua>/{_uclan} {_bank} {_set} <red><tag|player> <value>'
+  uclan bank subcommands remove: <click:suggest_command:"/{_uclan} {_bank} {_remove} "><hover:show_text:'<green>Нажмите, чтобы удалить банк.'> <aqua>/{_uclan} {_bank} {_remove} <red><tag|player> <value> <gray>-<yellow> Удалить из кланового банка.</hover></click>
+  uclan bank subcommands remove show on_success: '%tag% <green>Банк клана изменен на <green>{value}'
+  uclan bank subcommands remove show on_error: '%tag% <red>Произошла ошибка при смене банка.'
+  uclan bank subcommands remove show on_usage: '%tag% <red>Использовать <aqua>/{_uclan} {_bank} {_remove} <red><tag|player> <value>'
+  uclan bank subcommands add: <click:suggest_command:"/{_uclan} {_bank} {_add} "><hover:show_text:'<green>Нажмите, чтобы добавить банк.'> <aqua>/{_uclan} {_bank} {_add} <red><tag|player> <value> <gray>-<yellow> Добавить в клановый банк.</hover></click>
+  uclan bank subcommands add show on_success: '%tag% <green>Банк клана изменен на <green>{value}'
+  uclan bank subcommands add show on_error: '%tag% <red>Произошла ошибка при смене банка.'
+  uclan bank subcommands add show on_usage: '%tag% <red>Использовать <aqua>/{_uclan} {_bank} {_add} <red><tag|player> <value>'
+  uclan extension show on_help: <click:run_command:"/{_uclan} {_extension} "><hover:show_text:'<green>Нажмите, чтобы просмотреть и отредактировать.'> <aqua>/{_uclan} {_extension} <gray>-<yellow> Просмотр и редактирование расширений.</hover></click> <hover:show_text:'<green>С подкомандами.'><green>[!]</hover>
+  uclan extension show on_success: '%tag% <green>Расширение успешно изменено.'
+  uclan extension show on_error: '%tag% <red>Произошла ошибка при изменении расширения..'
+  uclan extension show on_usage: '%tag% <red>Использовать <aqua>/{_uclan} {_extension}'
+  uclan extension subcommands download: <click:suggest_command:"/{_uclan} {_extension} {_download}"><hover:show_text:'<green>Нажмите, чтобы изменить.'> <aqua>/{_uclan} {_extension} {_download} <red><name> <gray>-<yellow> Скачать расширение.</hover></click>
+  uclan extension subcommands download show on_success: '%tag% <green>Процесс загрузки начался, подождите....'
+  uclan extension subcommands download show on_error: '%tag% <aqua>Произошла ошибка при загрузке расширения..'
+  uclan extension subcommands download show on_usage: '%tag% <aqua>Использовать <aqua>/{_uclan} {_extension} {_download} <red><name>'
+  uclan extension subcommands update: <click:suggest_command:"/{_uclan} {_extension} {_update}"><hover:show_text:'<green>Нажмите, чтобы обновить расширение.'> <aqua>/{_uclan} {_extension} {_update} <red><name> <gray>-<yellow> Обновить расширение.</hover></click>
+  uclan extension subcommands update show on_success: '%tag% <green>Процесс обновления начался, подождите...'
+  uclan extension subcommands update show on_error: '%tag% <aqua>Произошла ошибка обновления расширения..'
+  uclan extension subcommands update show on_usage: '%tag% <aqua>Использовать <aqua>/{_uclan} {_extension} {_update} <red><name>'
+  uclan extension subcommands list: <click:suggest_command:"/{_uclan} {_extension} {_list}"><hover:show_text:'<green>Нажмите, чтобы просмотреть список установленных расширений.'> <aqua>/{_uclan} {_extension} {_list} <gray>-<yellow> Список установленных расширений.</hover></click>
+  uclan extension subcommands list show on_success: '%tag% <green>Расширение добавлено в список.'
+  uclan extension subcommands list show on_error: '%tag% <aqua>Произошла ошибка при отображении расширений..'
+  uclan extension subcommands list show on_usage: '%tag% <aqua>Использовать <aqua>/{_uclan} {_extension} {_list}'
+  uclan extension subcommands all: <click:suggest_command:"/{_uclan} {_extension} {_all}"><hover:show_text:'<green>Нажмите, чтобы просмотреть все расширения.'> <aqua>/{_uclan} {_extension} {_all} <gray>-<yellow> Список доступных расширений.</hover></click>
+  uclan extension subcommands all show on_success: '%tag% <green>Расширения успешно добавлены.'
+  uclan extension subcommands all show on_error: '%tag% <aqua>Произошла ошибка при перечислении расширений..'
+  uclan extension subcommands all show on_usage: '%tag% <aqua>Использовать <aqua>/{_uclan} {_extension} {_all}'
+  uclan extension subcommands reload: <click:suggest_command:"/{_uclan} {_extension} {_reload}"><hover:show_text:'<green>Нажмите, чтобы перезагрузить расширения.'> <aqua>/{_uclan} {_extension} {_reload}<gray>-<yellow> Перезагрузить расширения.</hover></click>
+  uclan extension subcommands reload show on_success: '%tag% <green>Расширения успешно перезагружены <gray>(%time%).'
+  uclan extension subcommands reload show on_error: '%tag% <aqua>При перезагрузке расширений произошла ошибка..'
+  uclan extension subcommands reload show on_usage: '%tag% <aqua>Использовать <aqua>/{_uclan} {_extension} перезагрузить'
+  uclan extension subcommands view: <click:suggest_command:"/{_uclan} {_extension} {_view}"><hover:show_text:'<green>Нажмите, чтобы просмотреть расширения.'> <aqua>/{_uclan} {_extension} {_view} <red><name> <gray>-<yellow> Посмотреть расширение.</hover></click>
+  uclan extension subcommands view show on_success: '%tag% <green>Успех.'
+  uclan extension subcommands view show on_error: '%tag% <aqua>Произошла ошибка при просмотре расширений..'
+  uclan extension subcommands view show on_usage: '%tag% <aqua>Использовать <aqua>/{_uclan} {_extension} {_view} <red><name>'
  
  
  # TRANSLATIONS OF THE CHAT ACTIONS
@@ -1796,3 +2330,34 @@ CHAT:
       line: <yellow>Запрос союза
       subline: <aqua>Прими или отклони предложение
     bossbar: <yellow>Запрос союза получен <yellow>({time})
+ 
+ 
+ # TRANSLATIONS OF THE LOGGER ACTIONS
+ 
+#Variables: {player_other}, {clan_other}, {home} and uclans placeholders
+LOGGER:
+  CLANBANNERCHANGEEVENT: <yellow>Знамя клана изменено на <green>%uclans_banner_material%<yellow>.
+  CLANHOMEDELETEEVENT: <yellow>Дом клана <green>{home} <yellow>был удален.
+  CLANHOMECREATEEVENT: <yellow>Дом клана называется <green>%uclans_home:{home}:name% <yellow>был создан.
+  CLANRIVALADDEVENT: <yellow>С кланом возникло новое соперничество. <green>{clan_other}<yellow>.
+  CLANRIVALREMOVEEVENT: <yellow>Соперничество с кланом <green>{clan_other} <yellow>был распущен.
+  CLANALLYREMOVEEVENT: <yellow>Альянс с кланом <green>{clan_other} <yellow>был удален.
+  CLANALLYADDEVENT: <yellow>Был сформирован новый альянс с кланом <green>{clan_other}<yellow>.
+  CLANLEADERCHANGEEVENT: <yellow>%uclans_leader_formated% <yellow>теперь новый лидер клана.
+  CLANVERIFYCHANGEEVENT: '<yellow>Проверка клана уже идет: <white>%uclans_verified%'
+  PATENT_CLANLEVELEVENT: <yellow>Патент клана теперь изменен на <green>%uclans_patent_formated%
+  CLANLEVELEVENT: '<yellow>Уровень клана изменен на <green>%uclans_level% <dark_gray>(max: %uclans_max_level_reached%)'
+  CLANPOINTCHANGEEVENT: <yellow>Очки клана изменены на <green>%uclans_points%
+  CLANMODDESCEVENT: <yellow>Описание клана изменено на <green>%uclans_desc_nocolor%
+  CLANMODTAGEVENT: <yellow>Тег клана изменен на <green>%uclans_tag_color%
+  CLANCREATEEVENT: <yellow>Клан был создан.
+  CLANPLAYERLEAVEEVENT: <yellow>Игрок <green>%uclans_player_name% <yellow>покинул клан.
+  CLANPLAYERJOINEVENT: <yellow>Игрок <green>%uclans_player_name% <yellow>вступил в клан.
+  CLANPLAYERROLECHANGE: <yellow>Игрок <green>%uclans_player_name% <yellow>Роль теперь изменена на <green>%uclans_player_role_formated%
+  CLANPLAYERINVITERECEIVE: <yellow>Игрок <green>{player_other} <yellow>был приглашен в клан <green>%uclans_player_name%
+  CLANALLYINVITEEVENT: <yellow>Ваш клан отправил клану запрос на союзника <green>{clan_other}
+  CLANRIVALINVITEEVENT: <yellow>Новое соперничество с кланом <green>{clan_other}
+  CLANPLAYERBANEVENT: <yellow>Игрок <green>{player_other} <yellow>был забанен в клане.
+  CLANPLAYERUNBANEVENT: <yellow>Игрок <green>{player_other} <yellow>был разбанен из клана.
+  CLANFFCHANGEEVENT: <yellow>Клановый дружественный огонь изменен на <green>{status}
+  CLANREGROUPSENDEVENT: <yellow>Запрос на перегруппировку клана отправлен пользователем <green>{player_other}
