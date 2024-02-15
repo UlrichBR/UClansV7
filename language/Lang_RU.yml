@@ -13,7 +13,7 @@ LANGUAGE:
   error mod desc: '%tag% <white>Ошибка при изменении описания клана.'
   has globalff: '%tag% <white>Глобальный дружественный огонь теперь включен!'
   no permission: '%tag% <white>У вас недостаточно прав.'
-  chest extra buyed update: '%tag% <yellow>%player% <white>приобрел новый сундук для клана.'
+  chest extra buyed update: '%tag% <yellow>{player_other} <white>приобрел новый сундук для клана.'
   currency vault: Деньги
   currency playerpoints: Поинты
   currency clansouls: Души
@@ -70,33 +70,33 @@ LANGUAGE:
   clan reward level: '%tag% <yellow>Вы заработали награды за достижение вашим кланом уровня %num%'
   clan max members: <aqua>В этом клане уже есть максимальное количество игроков.
   clan max members level: '%tag% <white>В этом клане уже есть максимальное количество игроков для текущего уровня.'
-  clan player kicked out: '%tag% <white>Тебя выгнали из клана <yellow>%clan% <white>лидером <white>%clan_leader%'
-  clan player kicked outby: '%tag% <dark_white>%player% <yellow>был выгнан из клана <white>%clan_leader%'
+  clan player kicked out: '%tag% <white>Тебя выгнали из клана <yellow>%uclans_tag_nocolor%'
+  clan player kicked outby: '%tag% <dark_white>{player_other} <yellow>был выгнан из клана <white>%uclans_player_name%'
   clan tag equals: '%tag% <white>Неизмененный ТЕГ, по-видимому, тот же самый.'
   clan name equals: '%tag% <white>Неизмененный НИК, по-видимому, тот же самый.'
   clan already rival: '%tag% <white>Этот клан уже является соперником.'
   clan is ally: '%tag% <white>Этот клан уже является союзником.'
   clan rival error remove: '%tag% <white>Ошибка удаления соперника.'
   clan dont rival: '%tag% <white>Этот клан не является соперником.'
-  clan new ally: '%tag% <yellow>С кланом был заключен новый союз <white>%clan_tag%'
-  clan removed ally: '%tag% <yellow>Союз с кланом <white>%clan_tag% <yellow>был удален.'
+  clan new ally: '%tag% <yellow>С кланом был заключен новый союз <white>%uclans_tag_nocolor%'
+  clan removed ally: '%tag% <yellow>Союз с кланом <white>%uclans_tag_nocolor% <yellow>был удален.'
   clan one removed ally: '%tag% <yellow>Союз был удален.'
   clan one removed rival: '%tag% <yellow>Соперничество было удалено.'
-  clan created: '%tag% <yellow>Новый клан <yellow>%clan_tag% <yellow>был создан игроком <white>%player%.'
-  clan deleted: '%tag% <yellow>Клан <yellow>%clan_tag% <yellow>был удален лидером <white>%player%.'
+  clan created: '%tag% <yellow>Новый клан <yellow>%uclans_tag_color% <yellow>был создан игроком <white>%uclans_leader_formated%.'
+  clan deleted: '%tag% <yellow>Клан <yellow>{deleted_clan} <yellow>был удален лидером.'
   clan deleted small: <red><strikethrough>Удален
   clan ff changed: '%tag% <yellow>Дружественный огонь <yellow>%value%.'
-  clan globalff changed: '%tag% <yellow>Глобальный дружественный огонь <yellow>%value%.'
-  clan new join: '%tag% <yellow>Игрок <white>%player% <yellow>вступил в клан.'
-  clan new kick: '%tag% <yellow>Игрок <white>%player% <yellow>был изгнан из Клана.'
-  clan new leave: '%tag% <white>Игрок <white>%player% <yellow>покинул <white>%clan_tag%.'
-  clan new rival: '%tag% <yellow>Новое соперничество с Кланом <white>%clan_tag%'
-  clan new rival removed: '%tag% <yellow>Соперничество с кланом <white>%clan_tag% <yellow>было удалено.'
-  clan new leader: '%tag% <yellow>Новый лидер клана <white>%clan_tag% <yellow>теперь <white>%player%'
+  clan globalff changed: '%tag% <yellow>Глобальный дружественный огонь <yellow>%uclans_global_ff_formated%.'
+  clan new join: '%tag% <yellow>Игрок <white>{player_other} <yellow>вступил в клан.'
+  clan new kick: '%tag% <yellow>Игрок <white>{player_other} <yellow>был изгнан из Клана.'
+  clan new leave: '%tag% <white>Игрок <white>{player_other} <yellow>покинул.'
+  clan new rival: '%tag% <yellow>Новое соперничество с Кланом <white>%uclans_tag_nocolor%'
+  clan new rival removed: '%tag% <yellow>Соперничество с кланом <white>%uclans_tag_nocolor% <yellow>было удалено.'
+  clan new leader: '%tag% <yellow>Новый лидер клана <white>%uclans_tag_nocolor% <yellow>теперь <white>%uclans_leader_formated% <yellow>и больше нет <red>{player_other}'
   clan rival removed: '%tag% <yellow>Соперничество с Кланом <white>%clan_tag% <yellow>было отменено.'
   clan verify changed: '%tag% <yellow>Клан был изменен на <white>%value%.'
-  clan new promote: '%tag% <yellow>Игрок <white>%player% <yellow>получил повышение до <yellow>%role_formated%.'
-  clan new demote: '%tag% <white>Игрок <white>%player% <yellow>был понижен.'
+  clan new promote: '%tag% <yellow>Игрок <white>%uclans_player_name% <yellow>получил повышение до <yellow>%uclans_player_role_formated%.'
+  clan new demote: '%tag% <white>Игрок <white>%uclans_player_name% <yellow>был понижен.'
   clan tag blacklist: '%tag% <white>Этот тег нельзя использовать в кланах.'
   clan changed settings: '%tag% <white>Настройки клана были изменены.'
   clan changed settings gui: <aqua>Настройки были изменены.
@@ -295,7 +295,7 @@ LANGUAGE:
   top war format: '<yellow>%num%: <aqua>| <white>%uclans_tag_color% <white>| <white>%uclans_clan_war_win%<white>/<dark_white>%uclans_clan_war_lose%'
   top point format: '<yellow>%num%: <aqua>| <white>%uclans_tag_color% <white>| <white>Поинты: <yellow>%uclans_points%'
   clan new balance: '%tag% <white>Новый балансовый счет банка является <white>%uclans_money_currency%%uclans_bank_balance%<yellow>, изменено <white>%uclans_player%'
-  player reseted kdr: '%tag% <white>Игрок <white>%player% <yellow>был сброшен KDR!'
+  player reseted kdr: '%tag% <white>Игрок <white>%uclans_player_name% <yellow>был сброшен KDR!'
   clan reseted kdr: '%tag% <white>Клан <white>%uclans_tag_color% <yellow>был сброшен KDR!'
   value greater than zero: '%tag% <white>Значение должно быть больше нуля'
   clan patent change: '%tag% <yellow>%uclans_tag_color% <yellow>клан сменил патент на <yellow>%uclans_patent_formated%'
@@ -346,7 +346,7 @@ LANGUAGE:
   home create success gui: <aqua>Новый дом успешно создан!
   home no exists gui: <aqua>В этом доме произошла ошибка.
   home delete error gui: <aqua>Произошла ошибка при удалении.
-  home delete success: '%tag% <white>Главная страница успешно удалена!'
+  home delete success: '%tag% <white>Главная страница <red>{deleted_home} <white>успешно удалена!'
   home delete success gui: <aqua>Успешно удален!
   new create home: '%tag% <white>На сервере <yellow>%server% <white>создан новый клановый дом с имененм <yellow>%name%'
   home removed: '%tag% <white>Клановый дом <yellow>%name% <white>на сервере <yellow>%server% <white>был удален'
@@ -481,6 +481,7 @@ LANGUAGE:
   clan ally add success gui: <green>Добавлен новый союзник.
   clan feature not unlocked: '%tag% <red>В вашем клане эта функция недоступна, для этого требуется уровень <aqua>%uclans_required_level:{type}%'
   clan feature not unlocked gui: <red>Требуется уровень <aqua>%uclans_required_level:{type}%
+  player already invited: '%tag% <red>There is already an invitation for this player!'
  
 # TRANSLATIONS OF GUI MENU FILES
  
@@ -1211,6 +1212,7 @@ GUI:
   - ' <white>Участников: <yellow>%uclans_count_members%'
   - ''
   - ' <yellow>ПКМ, чтобы увидеть информацию.'
+  - ' <yellow>ЛКМ, чтобы удалить.'
   General ally title: <blue>Список союзников <white>| %uclans_tag_color%
   General ally items fill name: ' '
   General ally items fill lore: [
@@ -1239,6 +1241,7 @@ GUI:
   - ' <white>Участников: <yellow>%uclans_count_members%'
   - ''
   - ' <yellow>ПКМ, чтобы увидеть информацию.'
+  - ' <yellow>ЛКМ, чтобы удалить.'
   General members title: <blue>Список участников <white>| %uclans_tag_color%
   General members items fill name: ' '
   General members items fill lore: [
@@ -2037,7 +2040,7 @@ COMMANDS:
   uclan resetclankdr show on_error: '%tag% <red>Ошибка..'
   uclan resetclankdr show on_usage: '%tag% <red>Используй <yellow>/{_uclan} {_resetclankdr} <red><player|tag>'
   uclan globalff show on_help: <click:suggest_command:"/{_uclan} {_globalff} "><hover:show_text:'<white>Нажми, чтобы отключить огонь по своим.'> <yellow>/{_uclan} {_globalff} <gray>-<yellow> Переключить огонь по своим.</hover></click>
-  uclan globalff show on_success: '%tag% <green>Вы изменили огонь по своим на <yellow>%globalff%'
+  uclan globalff show on_success: '%tag% <green>Вы изменили огонь по своим на <yellow>%uclans_global_ff_formated%'
   uclan globalff show on_error: '%tag% <red>Ошибка..'
   uclan globalff show on_usage: '%tag% <red>Используй <yellow>/{_uclan} {_globalff}'
   uclan delete show on_help: <click:suggest_command:"/{_uclan} {_delete} "><hover:show_text:'<white>Нажми, чтобы расформировать клан.'> <yellow>/{_uclan} {_delete} <red><player|tag> <gray>-<yellow> Удаление клана.</hover></click>
@@ -2160,6 +2163,10 @@ COMMANDS:
   uclan extension subcommands view show on_success: '%tag% <green>Успех.'
   uclan extension subcommands view show on_error: '%tag% <aqua>Произошла ошибка при просмотре расширений..'
   uclan extension subcommands view show on_usage: '%tag% <aqua>Использовать <aqua>/{_uclan} {_extension} {_view} <red><name>'
+  clan invite show on_help: <click:suggest_command:"/{_clan} {_invite} "><hover:show_text:'<green>Click to invite members.'> <aqua>/{_clan} {_invite} <red><name><gray>-<yellow> Toggle clan friendly fire.</hover></click>
+  clan invite show on_success: '%tag% <green>New invitation sent successfully, wait to accept or deny the request'
+  clan invite show on_error: '%tag% <red>There was an error sending the invitation.'
+  clan invite show on_usage: '%tag% <red>Use <aqua>/{_clan} {_invite} <red><name>'
  
  
  # TRANSLATIONS OF THE CHAT ACTIONS
@@ -2330,6 +2337,21 @@ CHAT:
       line: <yellow>Запрос союза
       subline: <aqua>Прими или отклони предложение
     bossbar: <yellow>Запрос союза получен <yellow>({time})
+  clandiscordcreatewebhook:
+    message:
+    - ' '
+    - <red><strikethrough>-<gray><strikethrough>---------------------------------------------<red><strikethrough>-
+    - <red>! <yellow>Creating webhook, write the webook url in the chat.
+    - <red>! <yellow><red>https://discord.com/api/webhooks/{channel}/{token}</red> <yellow>
+    - <red>! <yellow> or <red>webhooks/{channel}/{token}
+    - <click:run_command:"/{_clan} {_cancel}"><hover:show_text:"<green>Click to cancel, or use <aqua>/{_clan} {_cancel}"><red>[CANCEL]</red></hover></click>
+    - <red><strikethrough>-<gray><strikethrough>---------------------------------------------<red><strikethrough>-
+    - ' '
+    actionbar: <red><bold>!</bold> <yellow>>Creating webhook, write in chat!
+    title:
+      line: <red>! <yellow>Creating webhook
+      subline: <yellow>Write in the chat.
+    bossbar: <red><bold>!</bold> <yellow>Creating webhook, write in chat! <red>({time})
  
  
  # TRANSLATIONS OF THE LOGGER ACTIONS
