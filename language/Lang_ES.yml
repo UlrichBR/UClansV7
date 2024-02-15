@@ -2286,7 +2286,7 @@ CHAT:
     message:
     - ' '
     - <red><strikethrough>-<gray><strikethrough>---------------------------------------------<red><strikethrough>-
-    - <red>! <yellow>El clan <white>%uclans_tag_nocolor% <yellow> he enviado una solicitud de paz.
+    - <red>! <yellow>El clan <white>%clan_tag% <yellow> he enviado una solicitud de paz.
     - <red>! <yellow>Expira en <aqua>%sec_expires% segundos<gray>.
     - <click:run_command:"/{_clan} {_rival} {_accept} %uclans_tag_nocolor%"><hover:show_text:"<green>Click para aceptar, o usa <aqua>/{_clan} {_rival} {_accept} %uclans_tag_nocolor%."><green>[ACEPTAR]</green></hover></click>      <click:run_command:"/{_clan} {_rival} {_deny} %uclans_tag_nocolor%"><hover:show_text:"<green>Click para rechazar, o usa <aqua>/{_clan} {_rival} {_deny} %uclans_tag_nocolor%"><red>[RECHAZAR]</red></hover></click>
     - <red><strikethrough>-<gray><strikethrough>---------------------------------------------<red><strikethrough>-
@@ -2300,7 +2300,7 @@ CHAT:
     message:
     - ' '
     - <red><strikethrough>-<gray><strikethrough>---------------------------------------------<red><strikethrough>-
-    - <red>! <yellow>Solicitud de alianza recivida por el clan <white>%uclans_tag_nocolor%
+    - <red>! <yellow>Solicitud de alianza recivida por el clan <white>%clan_tag%
     - <red>! <yellow>Expira en <aqua>%sec_expires% segundos<gray>.
     - <click:run_command:"/{_clan} {_ally} {_accept} %uclans_tag_nocolor%"><hover:show_text:"<green>Click para aceptar, o usa <aqua>/{_clan} {_ally} {_accept} %uclans_tag_nocolor%"><green>[ACEPTAR]</green></hover></click>      <click:run_command:"/{_clan} {_ally} {_deny} %uclans_tag_nocolor%"><hover:show_text:"<green>Click para rechazar, o usa <aqua>/{_clan} {_ally} {_deny} %uclans_tag_nocolor%"><red>[RECHAZAR]</red></hover></click>
     - <red><strikethrough>-<gray><strikethrough>---------------------------------------------<red><strikethrough>-
