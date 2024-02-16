@@ -330,7 +330,7 @@ LANGUAGE:
   top war format: ''
   top point format: '<aqua>%num%: <gray>| <green>%uclans_tag_color% <gray>| <white>Pontos: <aqua>%uclans_points%'
   clan new balance: '%tag% <green>O novo saldo dos bancos é <green>%uclans_money_currency%%uclans_bank_balance%<yellow>, alterado por <green>%uclans_player%'
-  player reseted kdr: '%tag% <green>O jogador <green>%uclans_player_name% <yellow>teve a reinicialização do KDR!'
+  player reseted kdr: '%tag% <green>O jogador <green>%uclans_player_name% <yellow>teve o KDR alterado!'
   clan reseted kdr: '%tag% <green>O clan <green>%uclans_tag_color% <yellow>reiniciou seu KDR!'
   value greater than zero: '%tag% <red>O valor deve ser maior que zero.'
   clan patent change: '%tag% <yellow>O clan <aqua>%uclans_tag_color% <yellow>mudou de patente para <aqua>%uclans_patent_formated%'
