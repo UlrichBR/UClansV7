@@ -384,7 +384,7 @@ LANGUAGE:
   home delete error gui: <red>Houve um erro ao excluir.
   home delete success: '%tag% <green>Casa <red>{deleted_home} do clã excluído com sucesso!'
   home delete success gui: <green>Excluído com sucesso!
-  new create home: '%tag% <green>A nova casa do clã foi criada no servidor <aqua>%server% <green>com o nome <aqua>%name%!'
+  new create home: '%tag% <green>A nova casa do clã foi criada no servidor <aqua>%uclans_home:{name}:server% <green>com o nome <aqua>%uclans_home:{name}:name%!'
   home removed: '%tag% <red>A casa <aqua>%name% <red>do servidor <aqua>%server% <red>do clã foi excluída.'
   home limit: <red>Este é o limite (%limit%) para seu clã!
   home limit reached: '%tag% <red>O limite para o seu clã é de %homes% casas.'
@@ -1790,7 +1790,7 @@ COMMANDS:
   clan home show on_error: '%tag% <red>Erro usando o comando.'
   clan home show on_usage: '%tag% <red>Use <aqua>/{_clan} {_home}'
   clan home subcommands create: <click:suggest_command:"/{_clan} {_home} {_create} "><hover:show_text:'<green>Clique para criar.'> <aqua>/{_clan} {_home} {_create}<red><name><light_purple>(password)<gray>-<yellow> Criar a casa.</hover></click>
-  clan home subcommands create show on_success: '%tag% <green>A nova casa do clan foi criado com sucesso.'
+  clan home subcommands create show on_success: '%tag% <green>A nova casa do clã foi criada com sucesso.'
   clan home subcommands create show on_error: '%tag% <red>Um erro aconteceu ao criar.'
   clan home subcommands create show on_usage: '%tag% <red>Use <aqua>/{_clan} {_home} {_create} <red><name> <light_purple>(password)'
   clan home subcommands delete: <click:suggest_command:"/{_clan} {_home} {_delete} "><hover:show_text:'<green>Clique para deletar a casa.'> <aqua>/{_clan} {_home} {_delete} <red><name> <gray>-<yellow> Deletar a casa.</hover></click>
@@ -2220,10 +2220,10 @@ CHAT:
     - ' '
     - <red><strikethrough>-<gray><strikethrough>---------------------------------------------<red><strikethrough>-
     - <red><bold>!</bold> <yellow>Escreva no chat o nome da nova <aqua>Casa do Clan<yellow>.
-    - ' <gray>- Tipo <red>cancelar</red> <gray>ou <click:run_command:"/{_clan} {_cancel}"><hover:show_text:"<red>Clique para cancelar."><red>[CLIQUE AQUI]</red></hover></click> para cancelar.'
+    - ' <gray>- Envie <red>cancelar</red> <gray>ou <click:run_command:"/{_clan} {_cancel}"><hover:show_text:"<red>Clique para cancelar."><red>[CLIQUE AQUI]</red></hover></click> para cancelar.'
     - <red><strikethrough>-<gray><strikethrough>---------------------------------------------<red><strikethrough>-
     - ' '
-    actionbar: <red><bold>!</bold> <yellow>Digite a sua nova casa do clan no chat!
+    actionbar: <red><bold>!</bold> <yellow>Digite a sua nova casa do clã no chat!
     title:
       line: <red>! <yellow>Nova Casa
       subline: <yellow>Digite o chat!
@@ -2232,24 +2232,24 @@ CHAT:
     message:
     - ' '
     - <red><strikethrough>-<gray><strikethrough>---------------------------------------------<red><strikethrough>-
-    - <red><bold>!</bold> <yellow>Escreva no chat a tag do <aqua>Novo Clan<yellow> que você deseja criar <yellow>.
+    - <red><bold>!</bold> <yellow>Escreva no chat a tag do <aqua>Novo Clã<yellow> que você deseja criar <yellow>.
     - ' <gray>- Digite <red>cancele</red> <gray>ou <click:run_command:"/{_clan} {_cancel}"><hover:show_text:"<red>clique para cancelar."><red>[CLIQUE AQUI]</red></hover></click> para cancelar.'
     - <red><strikethrough>-<gray><strikethrough>---------------------------------------------<red><strikethrough>-
     - ' '
-    actionbar: <red><bold>!</bold> <yellow>Escreva a tag do seu novo clan no chat!
+    actionbar: <red><bold>!</bold> <yellow>Escreva a tag do seu novo clã no chat!
     title:
       line: <red>! <yellow>Novo clan
       subline: <yellow>Escreva no chat!
-    bossbar: <red><bold>!</bold> <yellow>Escreva a nova descrição no chat! <red>({time})
+    bossbar: <red><bold>!</bold> <yellow>Escreva a nova TAG no chat! <red>({time})
   clanmodtag:
     message:
     - ' '
     - <red><strikethrough>-<gray><strikethrough>---------------------------------------------<red><strikethrough>-
-    - <red><bold>!</bold> <yellow>Escreva no chat a <aqua>Nova Tag<yellow> do clan <yellow>.
-    - <gray>- Tipo <red>cancelar</red> <gray>ou <click:run_command:"/{_clan} {_cancel}"><click:run_command:"/{_clan} {_cancel}"><hover:show_text:"<red>Clique para cancelar."><red>[CLIQUE AQUI]</red></hover></click> para cancelar.
+    - <red><bold>!</bold> <yellow>Escreva no chat a <aqua>Nova Tag <yellow>do clã.
+    - <gray>- Envie <red>cancelar</red> <gray>ou <click:run_command:"/{_clan} {_cancel}"><click:run_command:"/{_clan} {_cancel}"><hover:show_text:"<red>Clique para cancelar."><red>[CLIQUE AQUI]</red></hover></click> para cancelar.
     - <red><strikethrough>-<gray><strikethrough>---------------------------------------------<red><strikethrough>-
     - ' '
-    actionbar: <red><bold>!</bold> <yellow>Escreva a nova tag do clan no chat!
+    actionbar: <red><bold>!</bold> <yellow>Escreva a nova tag do clã no chat!
     title:
       line: <red>! <yellow>Novo convite.
       subline: <yellow>Escreva no chat!
@@ -2258,11 +2258,11 @@ CHAT:
     message:
     - ' '
     - <red><strikethrough>-<gray><strikethrough>---------------------------------------------<red><strikethrough>-
-    - <red><bold>!</bold> <yellow>Escreva no chat o <aqua>Nova Descrição<yellow> do clan <yellow>.
-    - ' <gray>- Tipo <red>cancelar</red> <gray>ou <click:run_command:"/{_clan} {_cancel}"><hover:show_text:"<red>Clique para cancelar."><red>[CLIQUE AQUI]</red></hover></click> para cancelar.'
+    - <red><bold>!</bold> <yellow>Escreva no chat a <aqua>Nova Descrição <yellow>do clã.
+    - ' <gray>- Envie <red>cancelar</red> <gray>ou <click:run_command:"/{_clan} {_cancel}"><hover:show_text:"<red>Clique para cancelar."><red>[CLIQUE AQUI]</red></hover></click> para cancelar.'
     - <red><strikethrough>-<gray><strikethrough>---------------------------------------------<red><strikethrough>-
     - ' '
-    actionbar: <red><bold>!</bold> <yellow>Escreva a nova tag do clan no chat!
+    actionbar: <red><bold>!</bold> <yellow>Escreva a nova tag do clã no chat!
     title:
       line: <red>! <yellow>Nova descrição
       subline: <yellow>Escreva no chat!
@@ -2271,7 +2271,7 @@ CHAT:
     message:
     - ' '
     - <red><strikethrough>-<gray><strikethrough>---------------------------------------------<red><strikethrough>-
-    - <red>! <yellow>Convite recebido para se juntar ao clan. <white>%clan_tag_nocolor%
+    - <red>! <yellow>Convite recebido para se juntar ao clã. <white>%clan_tag_nocolor%
     - <click:run_command:"/{_clan} {_join} %clan_tag_nocolor%"><hover:show_text:"<green>Clique para aceitar, ou use <aqua>/{_clan} {_join}%clan_tag_nocolor%."><green>[ACCEPT]</green></hover></click><click:run_command:"/{_clan} {_deny} %clan_tag_nocolor%"><hover:show_text:"<green>Clique para aceitar, ou use <aqua>/{_clan} {_deny}%clan_tag_nocolor%."><red>[DENY]</red></hover></click>    <click:run_command:"/{_clan} {_profile} {_invites}"><hover:show_text:"<green>Clique para aceitar, ou use <aqua>/{_clan}{_profile} {_invites}."><yellow>[VER TUDO]</yellow></hover></click>
     - <red><strikethrough>-<gray><strikethrough>---------------------------------------------<red><strikethrough>-
     - ' '
@@ -2299,7 +2299,7 @@ CHAT:
     - ' '
     - <red><strikethrough>-<gray><strikethrough>---------------------------------------------<red><strikethrough>-
     - <red>! <yellow>Escreva no chat quem você deseja convidar para o clan.
-    - ' <gray>- Tipo <red>cancelar</red> <gray>ou <click:run_command:"/{_clan} {_cancel}"><hover:show_text:"<red>Clique para cancelar."><red>[CLIQUE AQUI]</red></hover></click> para cancelar.'
+    - ' <gray>- Envie <red>cancelar</red> <gray>ou <click:run_command:"/{_clan} {_cancel}"><hover:show_text:"<red>Clique para cancelar."><red>[CLIQUE AQUI]</red></hover></click> para cancelar.'
     - <red><strikethrough>-<gray><strikethrough>---------------------------------------------<red><strikethrough>-
     - ' '
     actionbar: <red><bold>!</bold> <yellow>>Escreva no chat quem você deseja convidar!
