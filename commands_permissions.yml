@@ -1,0 +1,104 @@
+Player commands:
+
+/clan help - Show help menu
+/clan create <tag> - Create a new Clan
+/clan cancel - Cancel pending actions
+/clan changeleader <player> - Transfer the leadership
+/clan desc <description> - Add description to Clan
+/clan disband - Delete you Clan
+/clan leave - Leave a Clan
+/clan join <tag> - Accept a clan invitation
+/clan deny <tag> - Deny clan invite
+/clan promote <player> - Promote a member
+/clan demote <player> - Demote a member
+
+/clan home - Clan homes
+ - /clan home create <name> (password) - Create a home
+ - /clan home delete <name> - Delete a home
+ - /clan home list (-gui) - List all homes
+ - /clan home teleport <name> (password) - Teleport to home
+ - /clan home view <name> - View a home
+
+/clan chat - Toggle clan chat
+/clan ff - Toggle clan friendly fire
+/clan modtag <newtag> - Change clan tag
+/clan list (type)/(-gui) - List all clans
+/clan info (tag) - View clan info
+
+/clan profile - View member commands
+ - /clan profile view (player) (-gui) - View player profile
+ - /clan profile set <key> <value> - Set profile settings
+ - /clan profile updateskin - Update skin
+ - /clan profile invites (-gui) - View invitations
+
+/clan rival - Clan rivalries
+ - /clan rival add <tag> - Add clan rival
+ - /clan rival remove <tag> - Remove a rival
+ - /clan rival list (tag) (-gui) - List clan rivalries
+ - /clan rival deny <tag> - Deny a rival
+ - /clan rival accept <tag> - Accept a rival
+
+/clan ally - Clan alliances
+ - /clan ally add <tag> - Add new ally
+ - /clan ally remove <tag> - Remove an alliance
+ - /clan ally accept <tag> - Accept a clan alliance
+ - /clan ally deny <tag> - Deny clan alliance
+ - /clan ally list (tag) (-gui) - List clan alliances
+
+/clan member - Clan member
+ - /clan member invite <player> - Invite a player
+ - /clan member kick <player> - Kick a member
+ - /clan member list (tag) (-gui) - List clan member
+ - /clan member search (text) - Search a member
+
+/clan settings - Change clan settings
+ - /clan settings banned (-gui) - List banned players
+ - /clan settings view (-gui) - View clan settings.
+ - /clan settings set <key> <value> - Change clan settings
+
+/clan role - Change clan role
+ - /clan role sync (-gui) - Sync role permissions
+ - /clan role view (-gui) - View clan role
+ - /clan role set <key> <value> - Change clan role
+
+/clan regroup - Regroup the clan
+ - /clan regroup send - Send a clan regroup
+ - /clan regroup accept - Accept a regroup invite
+ - /clan regroup deny - Deny a regroup invite
+
+/clan ban <player> - Ban a player
+/clan unban <player> - Unban a player
+/clan nickname <nickname> - Change clan nickname 
+
+/clan banner - Change clan banner
+ - /clan banner upload (-gui) - Upload a clan banner
+ - /clan banner delete - Delete the clan banner
+ - /clan banner view (-gui) - View banner information
+
+/clan mail
+ -/clan mail send <to> <text>
+ -/clan mail read (time) (page) (gui)
+ -/clan mail clear
+
+Admin Commands:
+
+/uclan help - Show help menu
+/uclan chatspy - Spy the clan chat
+/uclan addslot <player|tag> - Add slots to the Clan
+/uclan setslot <player|tag> - Set slots to the Clan
+/uclan removeslot <player|tag> - Remove slots to the Clan
+/uclan addpoints  <player|tag> <amount> (reason) - Add points to the Clan
+/uclan setpoints <player|tag> <amount> (reason)- Set points to the Clan
+/uclan removepoints <player|tag> <amount> (reason) - Remove points to the Clan
+/uclan changetag <player|tag> <newtag> - Changing a clan tag
+/uclan resetplayerkdr <player> - Reset Player KDR
+/uclan resetclankdr <player|tag> - Reset Clan KDR
+/uclan globalff - Toggle clan friendly fire
+/uclan delete <player|tag> - Delete a clan
+/uclan forcejoin <player> <player|tag> - Add a player to a clan
+/uclan verify <player|tag> - Verify a clan
+/uclan reload - Reload the settings
+/uclans extension - View and edit extensions
+
+
+Plugin.yml - https://github.com/UlrichBR/UClansV7/blob/main/configuration/plugin.yml
