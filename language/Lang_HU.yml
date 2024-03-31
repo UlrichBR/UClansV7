@@ -13,7 +13,7 @@ LANGUAGE:
   error mod desc: '%tag% <red>Hiba történt a leírás megváltoztatása során.'
   has globalff: '%tag% <green>Globális baráti tűz bekapcsolva!'
   no permission: '%tag% <red>Nincs jogosultságod'
-  chest extra buyed update: '%tag% <aqua>%player% <green>új klán ládát vásárolt.'
+  chest extra buyed update: '%tag% <aqua>{player_other} <green>új klán ládát vásárolt.'
   currency vault: Pénz
   currency playerpoints: Pont
   currency clansouls: Lélek
@@ -70,33 +70,33 @@ LANGUAGE:
   clan reward level: '%tag% <yellow>Klán jutalmak lettek feloldva a következő szint eléréséért: %num%'
   clan max members: <red>A klán már elérte a maximális létszámot.
   clan max members level: '%tag% <red>A klán már elérte a maximális létszámot a szintjének megfelelően.'
-  clan player kicked out: '%tag% <green>Ki lettél rúgva a(z) <aqua>%clan% <green>klánból <green>%clan_leader% <red>által'
-  clan player kicked outby: '%tag% <dark_red>%player% <yellow>ki lett rúgva a klánból <green>%clan_leader% <yellow>által'
+  clan player kicked out: '%tag% <green>Ki lettél rúgva a(z) <aqua>%clan% <green>klánból <green>%uclans_tag_nocolor% <red>által'
+  clan player kicked outby: '%tag% <dark_red>{player_other} <yellow>ki lett rúgva a klánból <green>{player_sender} <yellow>által'
   clan tag equals: '%tag% <red>Változatlan tag, úgy tűnik ugyanaz, mint az előző'
   clan name equals: '%tag% <red>Változatlan név, úgy tűnik ugyanaz, mint az előző.'
   clan already rival: '%tag% <red>Ez a klán már rivális.'
   clan is ally: '%tag% <red>Ez a klán már szövetséges.'
   clan rival error remove: '%tag% <red>Hiba történt a rivális eltörlése során.'
   clan dont rival: '%tag% <red>Ez a klán nem rivális.'
-  clan new ally: '%tag% <red>! <yellow>Új szövetség alakult ki a(z) <green>%clan_tag% klánnal'
-  clan removed ally: '%tag% <red>! <yellow>A szövetség megbontva a(z) <green>%clan_tag% <yellow>klánnal.'
+  clan new ally: '%tag% <red>! <yellow>Új szövetség alakult ki a(z) <green>%uclans_tag_nocolor% klánnal'
+  clan removed ally: '%tag% <red>! <yellow>A szövetség megbontva a(z) <green>%uclans_tag_nocolor% <yellow>klánnal.'
   clan one removed ally: '%tag% <red>! <yellow>Egy szövetség megbontásra került.'
   clan one removed rival: '%tag% <red>! <yellow>Egy rivális eltörlésre került.'
-  clan created: '%tag% <red>! <aqua>%clan_tag% <yellow>klán létrehozva <green>%player% <yellow>által.'
-  clan deleted: '%tag% <red>! <aqua>%clan_tag% <yellow>klán törölve <green>%player% <yellow>által.'
+  clan created: '%tag% <red>! <aqua>%uclans_tag_color% <yellow>klán létrehozva <green>%uclans_leader_formated% <yellow>által.'
+  clan deleted: '%tag% <red>! A <aqua>{deleted_clan} <yellow>klánt törölték.'
   clan deleted small: <red><strikethrough>Törölve
   clan ff changed: '%tag% <red>! <yellow>Baráti tűz <aqua>%value%.'
-  clan globalff changed: '%tag% <red>! <yellow>Globális baráti tűz <aqua>%value%.'
-  clan new join: '%tag% <red>! <green>%player% <yellow>csatlakozott a klánhoz.'
-  clan new kick: '%tag% <red>! <green>%player% <yellow>ki lett rúgva a klánból.'
-  clan new leave: '%tag% <red>! <green>%player% <yellow>kilépett a(z) <green>%clan_tag% <red>klánból.'
-  clan new rival: '%tag% <red>! <yellow>Új rivális: <green>%clan_tag%'
-  clan new rival removed: '%tag% <red>! <green>%clan_tag% <yellow>klán többé nem rivális.'
-  clan new leader: '%tag% <red>! <green>%clan_tag% <yellow>klán új vezetője: <green>%player%'
+  clan globalff changed: '%tag% <red>! <yellow>Globális baráti tűz <aqua>%uclans_global_ff_formated%.'
+  clan new join: '%tag% <red>! <green>{player_other} <yellow>csatlakozott a klánhoz.'
+  clan new kick: '%tag% <red>! <green>{player_other} <yellow>ki lett rúgva a klánból.'
+  clan new leave: '%tag% <red>! <green>{player_other} <yellow>kilépett a(z) klánból.'
+  clan new rival: '%tag% <red>! <yellow>Új rivális: <green>%uclans_tag_nocolor%'
+  clan new rival removed: '%tag% <red>! <green>%uclans_tag_nocolor% <yellow>klán többé nem rivális.'
+  clan new leader: '%tag% <red>! <green>%uclans_tag_nocolor% <yellow>klán új vezetője: <green>%uclans_leader_formated%'
   clan rival removed: '%tag% <red>! <green>%clan_tag% <yellow>klán többé nem rivális.'
   clan verify changed: '%tag% <red>! <yellow>A klán megváltoztatva erre: <green>%value%.'
-  clan new promote: '%tag% <red>! <green>%player% <yellow>előléptetve erre: <aqua>%role_formated%.'
-  clan new demote: '%tag% <red>! <green>%player% <yellow>lefokozva.'
+  clan new promote: '%tag% <red>! <green>%uclans_player_name% <yellow>előléptetve erre: <aqua>%uclans_player_role_formated%.'
+  clan new demote: '%tag% <red>! <green>%uclans_player_name% <yellow>lefokozva.'
   clan tag blacklist: '%tag% <red>Ez a tag nem használható.'
   clan changed settings: '%tag% <green>Klán beállítások módosítva.'
   clan changed settings gui: <green>Beállítások módosítva.
@@ -294,7 +294,7 @@ LANGUAGE:
   top war format: '<aqua>%num%: <gray>| <green>%uclans_tag_color% <gray>| <green>%uclans_clan_war_win%<gray>/<dark_red>%uclans_clan_war_lose%'
   top point format: '<aqua>%num%: <gray>| <green>%uclans_tag_color% <gray>| <white>Pont: <aqua>%uclans_points%'
   clan new balance: '%tag% <green>A bank új vagyonmérlege <green>%uclans_money_currency%%uclans_bank_balance%<yellow>, beállítva <green>%uclans_player% <yellow>által'
-  player reseted kdr: '%tag% <green>%player% <yellow>játékos visszaállította a KDR-ét!'
+  player reseted kdr: '%tag% <green>%uclans_player_name% <yellow>játékos visszaállította a KDR-ét!'
   clan reseted kdr: '%tag% <green>%uclans_tag_color% <yellow>klán visszaállította a KDR-ét!'
   value greater than zero: '%tag% <red>Az értéknek nagyobbnak kell lenne, mint 0!'
   clan patent change: '%tag% <aqua>%uclans_tag_color% <yellow>klán megváltoztatta a patentet a következőre: <aqua>%uclans_patent_formated%'
@@ -1109,6 +1109,7 @@ GUI:
   - ' <gray>Tagok: <aqua>%uclans_count_members%'
   - ''
   - ' <yellow>Jobb kattolj az információkért.'
+  - ' <red>Kattintson a bal oldali gombra az eltávolításhoz.'
   General ally title: <blue>Szövetséges lista <gray>| %uclans_tag_color%
   General ally items fill name: ' '
   General ally items fill lore: [
@@ -1137,6 +1138,7 @@ GUI:
   - ' <gray>Tagok: <aqua>%uclans_count_members%'
   - ''
   - ' <yellow>Jobb kattolj az információkért.'
+  - ' <yellow>Kattintson a bal oldali gombra az eltávolításhoz.'
   General members title: <blue>Tag lista <gray>| %uclans_tag_color%
   General members items fill name: ' '
   General members items fill lore: [
@@ -1606,7 +1608,7 @@ COMMANDS:
   uclan resetclankdr show on_error: '%tag% <red>Hiba történt'
   uclan resetclankdr show on_usage: '%tag% <red>Használat <aqua>/{_uclan} {_resetclankdr} <red><player|tag>'
   uclan globalff show on_help: <click:suggest_command:"/{_uclan} {_globalff} "><hover:show_text:'<green>Kattints ide a baráti tűz kapcsolásához.'> <aqua>/{_uclan} {_globalff} <gray>-<yellow> Baráti tűz kapcsolása.</hover></click>
-  uclan globalff show on_success: '%tag% <green>Baráti tűz: <aqua>%globalff%'
+  uclan globalff show on_success: '%tag% <green>Baráti tűz: <aqua>%uclans_global_ff_formated%'
   uclan globalff show on_error: '%tag% <red>Hiba történt.'
   uclan globalff show on_usage: '%tag% <red>Használat <aqua>/{_uclan} {_globalff}'
   uclan delete show on_help: <click:suggest_command:"/{_uclan} {_delete} "><hover:show_text:'<green>Kattints ide klán törléséhez.'> <aqua>/{_uclan} {_delete} <red><player|tag> <gray>-<yellow> Klán törlése.</hover></click>
