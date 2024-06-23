@@ -13,7 +13,7 @@ LANGUAGE:
   error mod desc: '%tag% <red>Error al cambiar la descripción del clan.'
   has globalff: '%tag% <green>El fuego amigo global ya está en marcha!'
   no permission: '%tag% <redNo tienes permiso'
-  chest extra buyed update: '%tag% <aqua>%player% <green>Ha comprado un nuevo cofre para el clan.'
+  chest extra buyed update: '%tag% <aqua>{player_other} <green>Ha comprado un nuevo cofre para el clan.'
   currency vault: Money
   currency playerpoints: Points
   currency clansouls: Souls
