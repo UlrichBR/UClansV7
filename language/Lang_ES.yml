@@ -348,7 +348,7 @@ LANGUAGE:
   home delete error gui: <red>Se ha producido un error al borrar.
   home delete success: '%tag% <green>Base eliminada con éxito!'
   home delete success gui: <green>Eliminado con éxito.
-  new create home: '%tag% <green>Se ha creado una nueva home del clan en el servidor <aqua>%server% <green>con el nombre <aqua>%name%'
+  new create home: '%tag% <green>Se ha creado una nueva home del clan en el servidor <aqua>%uclans_home:{name}:server% <green>con el nombre <aqua>%uclans_home:{name}:name%'
   home removed: '%tag% <red>El home <aqua>%name% <red>del servidor <aqua>%server% <red>del clan ha sido eliminado'
   home limit: <red>Este es el límite (%limit%) para su Clan!
   home limit reached: '%tag% <red>El límite para tu clan es %homes% homes.'
