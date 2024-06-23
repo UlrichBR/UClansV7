@@ -1721,7 +1721,7 @@ GUI:
   General members items onlines name: <green>Jugadores en línea?
   General members items onlines lore:
   - ''
-  - ' <white>Estado: <red>{estado}'
+  - ' <white>Estado: <red>{state}'
   - ' <yellow>Haz clic para filtrar.'
   General anvil_clancreate title: <blue>Crea un nuevo clan!
   General anvil_clancreate items left name: <white>Escribe tu texto arriba
