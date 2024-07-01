@@ -357,7 +357,7 @@ LANGUAGE:
   home delete error gui: <red>Silinirken bir hata oluştu.
   home delete success: '%tag% <green>Ev başarıyla silindi!'
   home delete success gui: <green>Başarıyla silindi!
-  new create home: '%tag% <aqua>%server% <green>sunucusunda <aqua>%name% <green>adıyla yeni bir klan evi oluşturuldu'
+  new create home: '%tag% <aqua>%uclans_home:{name}:server% <green>sunucusunda <aqua>%uclans_home:{name}:name% <green>adıyla yeni bir klan evi oluşturuldu'
   home removed: '%tag% <red>Klanın <aqua>%server% <red>sunucusudaki <aqua>%name% <red>evi silindi'
   home limit: <red>Klanınız için limit (%limit%) budur!
   home limit reached: '%tag% <red>Klanınız için sınır %homes% evdir.'
